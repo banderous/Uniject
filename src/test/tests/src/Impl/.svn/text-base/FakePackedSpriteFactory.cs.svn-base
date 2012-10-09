@@ -1,0 +1,14 @@
+using System;
+using Game;
+using Testable;
+using Ninject.Activation;
+
+namespace Tests {
+  public class FakePackedSpriteFactory : Game.IPackedSpriteFactory {
+
+    public IPackedSprite create(BaseGameObject parent, SpriteType t) {
+      return new FakePackedSprite(parent);
+    }
+  }
+}
+

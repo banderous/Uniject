@@ -1,0 +1,75 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../Assets/Plugins/Testable/Interface/IComponent.cs">
+    <Files>
+      <File FileName="../../Assets/src/Game/Weapons/Claymore.cs" Line="36" Column="22" />
+      <File FileName="../../Assets/src/Unity/SoldierItemDropper.cs" Line="1" Column="1" />
+      <File FileName="../../Assets/src/BulletFiringGun.cs" Line="27" Column="33" />
+      <File FileName="../../Assets/Plugins/Testable/impl/TestableComponent.cs" Line="4" Column="41" />
+      <File FileName="Tests/src/Tests/TestZombie.cs" Line="64" Column="19" />
+      <File FileName="../../Assets/Plugins/Testable/Interface/IComponent.cs" Line="5" Column="23" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Assembly-CSharp-Editor-vs" expanded="True" />
+          <Node name="Assembly-CSharp-firstpass-vs" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Plugins" expanded="True">
+                <Node name="Testable" expanded="True">
+                  <Node name="impl" expanded="True" />
+                  <Node name="Interface" expanded="True">
+                    <Node name="IComponent.cs" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="Assembly-CSharp-vs" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="src" expanded="True">
+                <Node name="Game" expanded="True">
+                  <Node name="Weapons" expanded="True" />
+                </Node>
+                <Node name="Unity" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+          <Node name="Tests" expanded="True">
+            <Node name="src" expanded="True">
+              <Node name="Impl" expanded="True" />
+              <Node name="Tests" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="ConnectionManagerPad">
+        <State selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/alex/Documents/working/LS3Android/LS3/test/Test/Yaml/FileFormat\Yaml\YamlParser.cs" line="101" />
+      <Breakpoint file="/Users/alex/Documents/working/LS3Android/LS3/test/Test/Yaml/FileFormat\Yaml\YamlParser.cs" line="109" />
+      <Breakpoint file="/Users/alex/Documents/working/LS3Android/LS3/test/Test/Tests/src/Tests/TestSoldier.cs" line="73" />
+      <Breakpoint file="/Users/alex/Documents/working/LS3Android/LS3/test/Test/Tests/src/TestMyMath.cs" line="55" />
+      <Breakpoint file="/Users/alex/Documents/working/LS3Android/LS3/test/Test/Tests/src/Tests/TestAISoldier.cs" line="32" />
+      <Breakpoint file="/Users/alex/Documents/working/LS3Android/LS3/Assets/src/Game/AISoldier.cs" line="227" />
+      <Breakpoint file="/Users/alex/Documents/working/LS3Android/LS3/test/Test/Tests/src/Tests/TestReferralsProxy.cs" line="84" />
+      <Breakpoint file="/Users/alex/Documents/working/LS3Android/LS3/Assets/src/scripts/ReferralsHttpAdapter.cs" line="58" />
+      <Breakpoint file="/Users/alex/Documents/working/LS3Android/LS3/test/Test/Tests/src/Tests/TestDailyRewardService.cs" line="62" />
+      <Breakpoint file="/Users/alex/Documents/working/LS3Android/LS3/Assets/src/Game/Weapons/BulletFiringGunDetails.cs" line="71" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
