@@ -12,24 +12,24 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>False</Optimize>
     <OutputPath>bin\Debug</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
-    <ConsolePause>false</ConsolePause>
+    <ConsolePause>False</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>False</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
-    <ConsolePause>false</ConsolePause>
+    <ConsolePause>False</ConsolePause>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -94,17 +94,13 @@
     <Compile Include="src\Impl\FakeGameObject.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Assembly-CSharp-vs.csproj">
-      <Project>{07159EB7-B620-9075-9898-9B5C7D2D6DDF}</Project>
+    <ProjectReference Include="..\..\Assembly-CSharp-vs.csproj">
+      <Project>{4CFFDA30-0E63-039E-0DCA-DAC117CE2649}</Project>
       <Name>Assembly-CSharp-vs</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Assembly-CSharp-firstpass-vs.csproj">
-      <Project>{8877C36D-F02E-70C1-A016-E17735579777}</Project>
+    <ProjectReference Include="..\..\Assembly-CSharp-firstpass-vs.csproj">
+      <Project>{E53CDB40-1DF9-8A61-5878-81243AFDF805}</Project>
       <Name>Assembly-CSharp-firstpass-vs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Assembly-CSharp-Editor-vs.csproj">
-      <Project>{3BF3AD34-5A0C-6E06-2C1C-D2544F9044AB}</Project>
-      <Name>Assembly-CSharp-Editor-vs</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

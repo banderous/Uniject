@@ -1,86 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-	<ProductVersion>10.0.20506</ProductVersion>
-	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{4CFFDA30-0E63-039E-0DCA-DAC117CE2649}</ProjectGuid>
-	<OutputType>Library</OutputType>
-	<AppDesignerFolder>Properties</AppDesignerFolder>
-	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
-	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-	<FileAlignment>512</FileAlignment>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4CFFDA30-0E63-039E-0DCA-DAC117CE2649}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-	<DebugSymbols>true</DebugSymbols>
-	<DebugType>full</DebugType>
-	<Optimize>false</Optimize>
-	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_3_5_5;UNITY_3_5;UNITY_EDITOR;ENABLE_PROFILER;UNITY_STANDALONE_OSX;ENABLE_GENERICS;ENABLE_DUCK_TYPING;ENABLE_TERRAIN;ENABLE_MOVIES;ENABLE_WEBCAM;ENABLE_MICROPHONE;ENABLE_NETWORK;ENABLE_CLOTH;ENABLE_WWW;ENABLE_SUBSTANCE</DefineConstants>
-	<ErrorReport>prompt</ErrorReport>
-	<WarningLevel>4</WarningLevel>
-	<NoWarn>0169</NoWarn>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_3_5_5;UNITY_3_5;UNITY_EDITOR;ENABLE_PROFILER;UNITY_STANDALONE_OSX;ENABLE_GENERICS;ENABLE_DUCK_TYPING;ENABLE_TERRAIN;ENABLE_MOVIES;ENABLE_WEBCAM;ENABLE_MICROPHONE;ENABLE_NETWORK;ENABLE_CLOTH;ENABLE_WWW;ENABLE_SUBSTANCE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-	<DebugType>pdbonly</DebugType>
-	<Optimize>true</Optimize>
-	<OutputPath>Temp\bin\Release\</OutputPath>
-	<DefineConstants>TRACE</DefineConstants>
-	<ErrorReport>prompt</ErrorReport>
-	<WarningLevel>4</WarningLevel>
-	<NoWarn>0169</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-	<Reference Include="System" />
-    <Reference Include="System.XML" />
-	<Reference Include="System.Core" />
-	<Reference Include="UnityEngine">
-	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
-	</Reference>
-	<Reference Include="UnityEditor">
-	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
-	</Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\Applications\Unity\Unity.app\Contents\Frameworks\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>..\..\..\..\..\..\Applications\Unity\Unity.app\Contents\Frameworks\Managed\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Ninject">
+      <HintPath>Assets\Plugins\Uniject\Assembly\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>Assets\Plugins\Uniject\Assembly\System.Xml.Linq.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Interface\IAudioListener.cs" />
-     <Compile Include="Assets\Interface\IAudioSource.cs" />
-     <Compile Include="Assets\Interface\ILayerMask.cs" />
-     <Compile Include="Assets\Interface\ILogger.cs" />
-     <Compile Include="Assets\Interface\IMaths.cs" />
-     <Compile Include="Assets\Interface\INavmeshAgent.cs" />
-     <Compile Include="Assets\Interface\IPlatformUtil.cs" />
-     <Compile Include="Assets\Interface\IResourceLoader.cs" />
-     <Compile Include="Assets\Interface\IRigidBody.cs" />
-     <Compile Include="Assets\Interface\ISphereCollider.cs" />
-     <Compile Include="Assets\Interface\ITime.cs" />
-     <Compile Include="Assets\Interface\ITransform.cs" />
-     <Compile Include="Assets\Interface\IUtil.cs" />
-     <Compile Include="Assets\Module\UnityNinjectSettings.cs" />
-     <Compile Include="Assets\impl\AndroidPlatformUtil.cs" />
-     <Compile Include="Assets\impl\TestableAudioSource.cs" />
-     <Compile Include="Assets\impl\TestableComponent.cs" />
-     <Compile Include="Assets\impl\TestableGameObject.cs" />
-     <Compile Include="Assets\impl\UnityAudioListener.cs" />
-     <Compile Include="Assets\impl\UnityAudioSource.cs" />
-     <Compile Include="Assets\impl\UnityGameObject.cs" />
-     <Compile Include="Assets\impl\UnityGameObjectBridge.cs" />
-     <Compile Include="Assets\impl\UnityLayerMask.cs" />
-     <Compile Include="Assets\impl\UnityLogger.cs" />
-     <Compile Include="Assets\impl\UnityMath.cs" />
-     <Compile Include="Assets\impl\UnityNavmeshAgent.cs" />
-     <Compile Include="Assets\impl\UnityResourceLoader.cs" />
-     <Compile Include="Assets\impl\UnityRigidBody.cs" />
-     <Compile Include="Assets\impl\UnitySphereCollider.cs" />
-     <Compile Include="Assets\impl\UnityTime.cs" />
-     <Compile Include="Assets\impl\UnityTransform.cs" />
- <Reference Include="Assets\Assembly\Ninject">
- <HintPath>Assets\Assembly\Ninject.dll</HintPath>
- </Reference>
- <Reference Include="Assets\Assembly\System.Xml.Linq">
- <HintPath>Assets\Assembly\System.Xml.Linq.dll</HintPath>
- </Reference>
+    <Compile Include="Assets\src\TestableExample.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
+      <Project>{E53CDB40-1DF9-8A61-5878-81243AFDF805}</Project>
+      <Name>Assembly-CSharp-firstpass-vs</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -90,5 +65,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
 </Project>
