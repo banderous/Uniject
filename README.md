@@ -9,23 +9,23 @@ Uniject, the Testability framework for Unity3D
 * Constructors!
 * An extremely flexible code base – in short, the benefits of DI + IOC.
 
-<dl>
-  <dt>Where to start</dt>
-</dl>
-
-This project contains a sample Unity project configured for Uniject.
+Uniject comes integrated into a sample Unity project.
 
 The code under test is a very simple mono behaviour equivalent that has a Sphere collider and a rigid body. When its transform falls below a threshold value, it resets it to the origin.
 
 The project has a unit test that verifies this behaviour, and a sample scene that spawns an instance of it.
 
-1. To run the unit tests
+<dl>
+  <dt>To run the Unit tests</dt>
+</dl>
 
 Open the MonoDevelop project at src/test/Test.sln
 
 The project is setup to reference the projects that Unity automatically generates, and has its own C Sharp project containing the unit tests.
 
-2. To run the example scene
+<dl>
+  <dt>To run the example scene</dt>
+</dl>
 
 Open the project in Unity and load the 'example' scene.
 
