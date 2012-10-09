@@ -44,7 +44,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\src\InjectionRoot.cs" />
      <Compile Include="Assets\src\TestableExample.cs" />
+     <None Include="Assets\resources\test.xml" />
  <Reference Include="Assets\Plugins\Uniject\Assembly\Ninject">
  <HintPath>Assets\Plugins\Uniject\Assembly\Ninject.dll</HintPath>
  </Reference>

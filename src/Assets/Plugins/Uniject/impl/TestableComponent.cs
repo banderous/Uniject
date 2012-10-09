@@ -4,7 +4,7 @@ namespace Testable {
     public class TestableComponent {
         private TestableGameObject obj;
 
-        protected bool enabled { get; set; }
+        public bool enabled { get; set; }
 
         public TestableComponent(TestableGameObject obj) {
             this.enabled = true;

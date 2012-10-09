@@ -1,12 +1,46 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="../Assets/Plugins/Uniject/impl/UnityInjector.cs">
+    <Files>
+      <File FileName="tests/src/Impl/mock/FakeComponent.cs" Line="12" Column="1" />
+      <File FileName="tests/src/Tests/TestTestableFramework.cs" Line="33" Column="13" />
+      <File FileName="tests/src/Impl/mock/MockResourceLoader.cs" Line="12" Column="63" />
+      <File FileName="../Assets/src/TestableExample.cs" Line="12" Column="1" />
+      <File FileName="../Assets/src/InjectionRoot.cs" Line="8" Column="9" />
+      <File FileName="../Assets/Plugins/Uniject/impl/UnityInjector.cs" Line="19" Column="35" />
+      <File FileName="../Assets/Plugins/Uniject/Module/UnityNinjectSettings.cs" Line="17" Column="3" />
+      <File FileName="../Assets/Plugins/Uniject/Module/UnityModule.cs" Line="26" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="Assembly-CSharp-firstpass-vs" expanded="True" />
+          <Node name="Assembly-CSharp-firstpass-vs" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Plugins" expanded="True">
+                <Node name="Uniject" expanded="True">
+                  <Node name="impl" expanded="True">
+                    <Node name="UnityInjector.cs" selected="True" />
+                  </Node>
+                  <Node name="Module" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
           <Node name="Assembly-CSharp-vs" expanded="True">
-            <Node name="Assets" expanded="True" />
+            <Node name="Assets" expanded="True">
+              <Node name="resources" expanded="True" />
+              <Node name="src" expanded="True" />
+            </Node>
+          </Node>
+          <Node name="test" expanded="True">
+            <Node name="src" expanded="True">
+              <Node name="Impl" expanded="True">
+                <Node name="framework" expanded="True" />
+                <Node name="mock" expanded="True" />
+              </Node>
+              <Node name="module" expanded="True" />
+              <Node name="Tests" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
@@ -17,7 +51,11 @@
         <State />
       </Pad>
       <Pad Id="MonoDevelop.NUnit.TestPad">
-        <State expanded="True" selected="True" />
+        <State expanded="True" selected="True">
+          <Node name="test" expanded="True">
+            <Node name="Tests" expanded="True" />
+          </Node>
+        </State>
       </Pad>
       <Pad Id="ConnectionManagerPad">
         <State selected="True" />

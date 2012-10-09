@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-vs", "..\As
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass-vs", "..\Assembly-CSharp-firstpass-vs.csproj", "{E53CDB40-1DF9-8A61-5878-81243AFDF805}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{676C4FC1-6C42-4BC6-956D-8D3639E4CC9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "tests\test.csproj", "{6DFB24A3-F878-4818-89E7-F85584CADB91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{4CFFDA30-0E63-039E-0DCA-DAC117CE2649}.Debug|x86.Build.0 = Debug|Any CPU
 		{4CFFDA30-0E63-039E-0DCA-DAC117CE2649}.Release|x86.ActiveCfg = Release|Any CPU
 		{4CFFDA30-0E63-039E-0DCA-DAC117CE2649}.Release|x86.Build.0 = Release|Any CPU
-		{676C4FC1-6C42-4BC6-956D-8D3639E4CC9B}.Debug|x86.ActiveCfg = Debug|x86
-		{676C4FC1-6C42-4BC6-956D-8D3639E4CC9B}.Debug|x86.Build.0 = Debug|x86
-		{676C4FC1-6C42-4BC6-956D-8D3639E4CC9B}.Release|x86.ActiveCfg = Release|x86
-		{676C4FC1-6C42-4BC6-956D-8D3639E4CC9B}.Release|x86.Build.0 = Release|x86
+		{6DFB24A3-F878-4818-89E7-F85584CADB91}.Debug|x86.ActiveCfg = Debug|x86
+		{6DFB24A3-F878-4818-89E7-F85584CADB91}.Debug|x86.Build.0 = Debug|x86
+		{6DFB24A3-F878-4818-89E7-F85584CADB91}.Release|x86.ActiveCfg = Release|x86
+		{6DFB24A3-F878-4818-89E7-F85584CADB91}.Release|x86.Build.0 = Release|x86
 		{E53CDB40-1DF9-8A61-5878-81243AFDF805}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{E53CDB40-1DF9-8A61-5878-81243AFDF805}.Debug|x86.Build.0 = Debug|Any CPU
 		{E53CDB40-1DF9-8A61-5878-81243AFDF805}.Release|x86.ActiveCfg = Release|Any CPU

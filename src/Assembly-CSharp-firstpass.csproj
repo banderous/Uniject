@@ -57,8 +57,12 @@
      <Compile Include="Assets\Plugins\Uniject\Interface\ITime.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\ITransform.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\IUtil.cs" />
+     <Compile Include="Assets\Plugins\Uniject\Module\UnityModule.cs" />
      <Compile Include="Assets\Plugins\Uniject\Module\UnityNinjectSettings.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\AndroidPlatformUtil.cs" />
+     <Compile Include="Assets\Plugins\Uniject\impl\GameObjectBoundary.cs" />
+     <Compile Include="Assets\Plugins\Uniject\impl\LevelLoadListener.cs" />
+     <Compile Include="Assets\Plugins\Uniject\impl\Scoping.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\TestableAudioSource.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\TestableComponent.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\TestableGameObject.cs" />
@@ -66,6 +70,7 @@
      <Compile Include="Assets\Plugins\Uniject\impl\UnityAudioSource.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityGameObject.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityGameObjectBridge.cs" />
+     <Compile Include="Assets\Plugins\Uniject\impl\UnityInjector.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityLayerMask.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityLogger.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityMath.cs" />
@@ -75,6 +80,7 @@
      <Compile Include="Assets\Plugins\Uniject\impl\UnitySphereCollider.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityTime.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityTransform.cs" />
+     <None Include="Assets\resources\test.xml" />
  <Reference Include="Assets\Plugins\Uniject\Assembly\Ninject">
  <HintPath>Assets\Plugins\Uniject\Assembly\Ninject.dll</HintPath>
  </Reference>
