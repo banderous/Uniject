@@ -53,6 +53,11 @@ namespace Tests {
             ILayerMask layerMask = kernel.Get<ILayerMask>();
             Assert.AreEqual(0, layerMask.NameToLayer("Default"));
         }
+
+        [Test]
+        public void testPrefabLoading() {
+            kernel.Get<IResourceLoader>().instantiate("Sphere");
+        }
     }
 }
 

@@ -15,12 +15,15 @@ public class TestableExample : TestableComponent {
     private ISphereCollider collider;
     private IRigidBody body;
 
-    public TestableExample(TestableGameObject parent, ISphereCollider collider, IRigidBody body) : base(parent) {
+    public TestableExample(TestableGameObject parent, ISphereCollider collider, IRigidBody body,
+                          IResourceLoader loader) : base(parent) {
         this.collider = collider;
         this.body = body;
 
         this.collider.radius = 5.0f;
         this.body.mass = 4.0f;
+
+        loader.instantiate("Sphere").transform.Parent = Obj.transform;
     }
 
     public override void Update() {
