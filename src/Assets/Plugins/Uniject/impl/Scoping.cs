@@ -9,9 +9,8 @@ namespace Testable {
          */
         public static object GameObjectBoundaryScoper(Ninject.Activation.IContext context) {
             if (context.Request.Target != null) {
-                
-                if (context.Request.Target.Type.IsDefined(typeof(GameObjectBoundary), true)) {
-                    return context;
+                if (context.Request.Target.IsDefined(typeof(GameObjectBoundary), true) || context.Request.Target.Type.IsDefined(typeof(GameObjectBoundary), true)) {
+                    return context.Request.Target;
                 }
             }
             

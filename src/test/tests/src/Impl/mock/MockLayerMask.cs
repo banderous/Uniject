@@ -4,9 +4,10 @@ using System.IO;
 using System.Collections.Generic;
 
 namespace Tests {
-    /*
-     * This makes reference to Unity's TagMangager to verify tag names.
-     */
+    /// <summary>
+    /// Makes reference to Unity's TagMangager to verify tag names.
+    /// TODO: Use a proper YAML parser.
+    /// </summary>
     public class MockLayerMask : ILayerMask {
 
         private Dictionary<string, int> layerMap = new Dictionary<string, int> ();

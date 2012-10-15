@@ -30,7 +30,7 @@ namespace Tests {
 
 
             Bind<TestableGameObject>().To<FakeGameObject>().InScope(Scoping.GameObjectBoundaryScoper);
-            Bind<ITransform>().To<FakeGameObject.FakeTransform>();
+            Bind<ITransform>().To<FakeGameObject.FakeTransform>().InScope(Scoping.GameObjectBoundaryScoper);
         }
     }
 }

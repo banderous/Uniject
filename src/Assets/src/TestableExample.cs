@@ -13,11 +13,13 @@ using Testable;
 public class TestableExample : TestableComponent {
 
     public TestableExample(TestableGameObject parent, ISphereCollider collider, IRigidBody body,
-                           [PrefabAttribute("Sphere")] TestableGameObject sphere) : base(parent) {
+                          [PrefabAttribute("Sphere")] TestableGameObject sphere) : base(parent) {
         sphere.transform.Parent = this.Obj.transform;
 
-        collider.radius = 5.0f;
+        collider.radius = 0.5f;
         body.mass = 4.0f;
+
+        this.Obj.transform.localScale = new Vector3(5, 5, 5);
     }
 
     public override void Update() {

@@ -19,8 +19,8 @@ namespace Tests {
             }
         }
 
-        public int objectCount() {
-            return objects.Count;
+        public int Count {
+            get { return objects.Count; }
         }
 
         private HashSet<TestableGameObject> objects = new HashSet<TestableGameObject>();

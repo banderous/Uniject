@@ -22,5 +22,6 @@ public class UnityModule : NinjectModule {
         
         Bind<IAudioListener>().To<UnityAudioListener>();
         Bind<TestableGameObject>().ToProvider<PrefabProvider>().WhenTargetHas(typeof(PrefabAttribute));
+        Bind<ITransform>().To<UnityTransform>().InScope(Scoping.GameObjectBoundaryScoper);
     }
 }

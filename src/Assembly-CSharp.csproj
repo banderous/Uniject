@@ -44,10 +44,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\src\Bot.cs" />
-     <Compile Include="Assets\src\CollisionRoot.cs" />
      <Compile Include="Assets\src\InjectionRoot.cs" />
-     <Compile Include="Assets\src\TestableCollisionDetecting.cs" />
      <Compile Include="Assets\src\TestableExample.cs" />
      <None Include="Assets\resources\test.xml" />
  <Reference Include="Assets\Plugins\Uniject\Assembly\Ninject">

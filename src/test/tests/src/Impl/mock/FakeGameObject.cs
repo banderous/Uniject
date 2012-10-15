@@ -4,6 +4,10 @@ using Testable;
 using UnityEngine;
 
 namespace Tests {
+
+    public class NullTransformException : Exception {
+    }
+
     public class FakeGameObject : TestableGameObject {
 
         public class FakeTransform : ITransform {
@@ -11,6 +15,8 @@ namespace Tests {
             public bool active { get; set; }
 
             public Vector3 Position { get; set; }
+
+            public Vector3 localScale { get; set; }
 
             public Quaternion Rotation { get; set; }
 
@@ -33,8 +39,13 @@ namespace Tests {
                 }
                 set {
                     if (value == null) {
-                        throw new NullReferenceException ();
+                        throw new NullTransformException ();
                     }
+
+                    if (t == value) {
+                        throw new ArgumentException("Cannot assign a transform's parent to itself");
+                    }
+
                     t = value;
                 }
             }

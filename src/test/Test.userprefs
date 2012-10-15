@@ -1,35 +1,46 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="tests/src/Impl/framework/BaseInjectedTest.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../Assets/Plugins/Uniject/impl/Scoping.cs">
     <Files>
-      <File FileName="tests/src/Impl/mock/FakeComponent.cs" Line="1" Column="1" />
-      <File FileName="tests/src/Tests/TestTestableFramework.cs" Line="48" Column="93" />
-      <File FileName="tests/src/Impl/mock/MockResourceLoader.cs" Line="1" Column="1" />
-      <File FileName="../Assets/src/InjectionRoot.cs" Line="1" Column="1" />
-      <File FileName="../Assets/Plugins/Uniject/impl/UnityInjector.cs" Line="1" Column="1" />
-      <File FileName="../Assets/Plugins/Uniject/Module/UnityNinjectSettings.cs" Line="1" Column="1" />
-      <File FileName="../Assets/Plugins/Uniject/Module/UnityModule.cs" Line="1" Column="1" />
-      <File FileName="../Assets/Plugins/Uniject/impl/LevelLoadListener.cs" Line="1" Column="1" />
-      <File FileName="tests/src/Tests/TestExampleGameObject.cs" Line="1" Column="1" />
-      <File FileName="../Assets/src/TestableExample.cs" Line="1" Column="1" />
-      <File FileName="tests/src/Impl/mock/MockLayerMask.cs" Line="1" Column="1" />
-      <File FileName="tests/src/Impl/framework/BaseInjectedTest.cs" Line="5" Column="7" />
+      <File FileName="../Assets/src/TestableExample.cs" Line="17" Column="8" />
+      <File FileName="../Assets/Plugins/Uniject/impl/UnityInjector.cs" Line="13" Column="34" />
+      <File FileName="../Assets/Plugins/Uniject/Module/PrefabProvider.cs" Line="9" Column="29" />
+      <File FileName="../Assets/Plugins/Uniject/impl/UnityTransform.cs" Line="5" Column="35" />
+      <File FileName="tests/src/Tests/TestTestableFramework.cs" Line="55" Column="1" />
+      <File FileName="tests/src/Tests/TestExampleGameObject.cs" Line="17" Column="75" />
+      <File FileName="tests/src/module/TestModule.cs" Line="33" Column="95" />
+      <File FileName="../Assets/src/InjectionRoot.cs" Line="10" Column="78" />
+      <File FileName="../Assets/Plugins/Uniject/impl/UnityGameObject.cs" Line="1" Column="1" />
+      <File FileName="../Assets/Plugins/Uniject/Module/UnityModule.cs" Line="27" Column="1" />
+      <File FileName="../Assets/Plugins/Uniject/impl/Scoping.cs" Line="17" Column="1" />
+      <File FileName="Disassembly" />
+      <File FileName="tests/src/Impl/mock/FakeGameObject.cs" Line="42" Column="57" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="Assembly-CSharp-firstpass-vs" expanded="True" />
+          <Node name="Assembly-CSharp-firstpass-vs" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Plugins" expanded="True">
+                <Node name="Uniject" expanded="True">
+                  <Node name="impl" expanded="True">
+                    <Node name="Scoping.cs" selected="True" />
+                  </Node>
+                  <Node name="Interface" expanded="True" />
+                  <Node name="Module" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
           <Node name="Assembly-CSharp-vs" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="resources" expanded="True" />
               <Node name="src" expanded="True" />
             </Node>
           </Node>
-          <Node name="test" expanded="True" selected="True">
+          <Node name="test" expanded="True">
             <Node name="References" expanded="True" />
             <Node name="src" expanded="True">
               <Node name="Impl" expanded="True">
-                <Node name="framework" expanded="True" />
                 <Node name="mock" expanded="True" />
               </Node>
               <Node name="module" expanded="True" />
@@ -44,11 +55,20 @@
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State />
       </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State expanded="True">
+          <Node name="test" expanded="True">
+            <Node name="Tests" expanded="True">
+              <Node name="TestExampleGameObject" expanded="True" />
+              <Node name="TestTestableFramework" expanded="True">
+                <Node name="testInjectedPrefabHasDistinctTransform" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
       <Pad Id="ConnectionManagerPad">
         <State selected="True" />
-      </Pad>
-      <Pad Id="MonoDevelop.NUnit.TestPad">
-        <State expanded="True" selected="True" />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
@@ -65,6 +85,10 @@
       <Breakpoint file="/Users/alex/Documents/working/LS3Android/LS3/test/Test/Tests/src/Tests/TestDailyRewardService.cs" line="62" />
       <Breakpoint file="/Users/alex/Documents/working/LS3Android/LS3/Assets/src/Game/Weapons/BulletFiringGunDetails.cs" line="71" />
       <Breakpoint file="/Users/alex/Documents/working/Uniject/src/test/tests/src/Impl/mock/MockLayerMask.cs" line="17" />
+      <Breakpoint file="/Users/alex/Documents/working/Uniject/src/Assets/src/TestableExample.cs" line="17" />
+      <Breakpoint file="/Users/alex/Documents/working/Uniject/src/test/tests/src/Tests/TestTestableFramework.cs" line="55" />
+      <Breakpoint file="/Users/alex/Documents/working/Uniject/src/test/tests/src/Impl/mock/FakeGameObject.cs" line="42" />
+      <Breakpoint file="/Users/alex/Documents/working/Uniject/src/test/tests/src/Impl/mock/FakeGameObject.cs" line="38" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

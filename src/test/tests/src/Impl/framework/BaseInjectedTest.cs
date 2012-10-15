@@ -23,6 +23,10 @@ namespace Tests {
             kernel.Get<TestUpdatableManager>().step(frames);
         }
 
+        protected int objectCount {
+            get { return kernel.Get<TestUpdatableManager>().Count; }
+        }
+
         protected IKernel createNewKernel() {
             return new StandardKernel (getModule());
         }

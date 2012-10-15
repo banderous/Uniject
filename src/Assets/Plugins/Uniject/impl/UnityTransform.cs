@@ -15,6 +15,11 @@ namespace Testable {
             set { transform.position = value; }
         }
 
+        public Vector3 localScale {
+            get { return transform.localScale; }
+            set { transform.localScale = value; }
+        }
+
         public Quaternion Rotation {
             get { return transform.rotation; }
             set { transform.rotation = value; }

@@ -6,7 +6,7 @@ using Testable;
 /// Denotes a parameter should be instantiated as a Unity prefab.
 /// </summary>
 [System.AttributeUsage(System.AttributeTargets.Parameter)]
-public class PrefabAttribute : System.Attribute {
+public class PrefabAttribute : GameObjectBoundary {
     public string Path { get; private set; }
     public PrefabAttribute(string path) {
         this.Path = path;

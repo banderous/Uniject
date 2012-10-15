@@ -8,6 +8,11 @@ namespace Testable {
             set;
         }
 
+        Vector3 localScale {
+            get;
+            set;
+        }
+
         Quaternion Rotation {
             get;
             set;

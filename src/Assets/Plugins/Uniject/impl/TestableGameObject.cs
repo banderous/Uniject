@@ -4,6 +4,10 @@ using UnityEngine;
 using Testable;
 
 namespace Testable {
+
+    /// <summary>
+    /// A testable equivalent of <c>UnityEngine.GameObject</c>.
+    /// </summary>
     public abstract class TestableGameObject {
 
         private List<TestableComponent> components = new List<TestableComponent>();
