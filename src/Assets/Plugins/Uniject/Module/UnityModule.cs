@@ -6,11 +6,6 @@ using Testable;
 
 public class UnityModule : NinjectModule {
     
-    private Func<Ninject.Activation.IContext, object> levelScope;
-    public UnityModule(Func<Ninject.Activation.IContext, object> levelScope) {
-        this.levelScope = levelScope;
-    }
-    
     public override void Load() {
         Bind<GameObject>().To<GameObject>().InScope(Scoping.GameObjectBoundaryScoper);
         Bind<TestableGameObject>().To<UnityGameObject>().InScope(Scoping.GameObjectBoundaryScoper);
@@ -26,7 +21,6 @@ public class UnityModule : NinjectModule {
         Bind<Testable.IResourceLoader>().To<UnityResourceLoader>().InSingletonScope();
         
         Bind<IAudioListener>().To<UnityAudioListener>();
+        Bind<TestableGameObject>().ToProvider<PrefabProvider>().WhenTargetHas(typeof(PrefabAttribute));
     }
-    
 }
-

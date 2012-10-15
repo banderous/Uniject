@@ -7,23 +7,17 @@ using Testable;
  * that will reset its location to the origin if it falls below -100 on the y axis.
  * 
  * The GameObjectBoundary attribute signifies that this should get its own GameObject, rather
- * than sharing that of the request scope.
+ * than sharing that of the request scope, which is the default.
  */
 [GameObjectBoundary]
 public class TestableExample : TestableComponent {
 
-    private ISphereCollider collider;
-    private IRigidBody body;
-
     public TestableExample(TestableGameObject parent, ISphereCollider collider, IRigidBody body,
-                          IResourceLoader loader) : base(parent) {
-        this.collider = collider;
-        this.body = body;
+                           [PrefabAttribute("Sphere")] TestableGameObject sphere) : base(parent) {
+        sphere.transform.Parent = this.Obj.transform;
 
-        this.collider.radius = 5.0f;
-        this.body.mass = 4.0f;
-
-        loader.instantiate("Sphere").transform.Parent = Obj.transform;
+        collider.radius = 5.0f;
+        body.mass = 4.0f;
     }
 
     public override void Update() {

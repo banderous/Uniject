@@ -10,7 +10,7 @@ public class UnityInjector
     public static IKernel get() {
         if (null == kernel) {
             kernel = new StandardKernel (new UnityNinjectSettings (), new Ninject.Modules.INinjectModule[] {
-                new UnityModule (scoper)
+                new UnityModule ()
             } );
             
             GameObject listener = new GameObject();
