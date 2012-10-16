@@ -1,5 +1,5 @@
 
-Microsoft Visual Studio Solution File, Format Version 10.00
+Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-vs", "../Assembly-CSharp-vs.csproj", "{4CFFDA30-0E63-039E-0DCA-DAC117CE2649}"
 EndProject
