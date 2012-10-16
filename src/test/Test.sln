@@ -1,11 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-vs", "..\Assembly-CSharp-vs.csproj", "{4CFFDA30-0E63-039E-0DCA-DAC117CE2649}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-vs", "../Assembly-CSharp-vs.csproj", "{4CFFDA30-0E63-039E-0DCA-DAC117CE2649}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass-vs", "..\Assembly-CSharp-firstpass-vs.csproj", "{E53CDB40-1DF9-8A61-5878-81243AFDF805}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass-vs", "../Assembly-CSharp-firstpass-vs.csproj", "{E53CDB40-1DF9-8A61-5878-81243AFDF805}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "tests\test.csproj", "{6DFB24A3-F878-4818-89E7-F85584CADB91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "tests/test.csproj", "{6DFB24A3-F878-4818-89E7-F85584CADB91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,7 +31,7 @@ Global
 		{D3C8EE03-2AFC-A2DF-2ECC-4E10539BA06A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = ..\Assembly-CSharp-vs.csproj
+		StartupItem = ../Assembly-CSharp-vs.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
 		$1.FileWidth = 120
