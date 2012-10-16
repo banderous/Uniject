@@ -12,23 +12,31 @@ namespace Tests {
         protected IKernel kernel;
 
         protected object sceneScope;
+        private TestUpdatableManager mgr;
 
         [SetUp]
         public void setup() {
             kernel = createNewKernel();
             sceneScope = new object();
+            mgr = kernel.Get<TestUpdatableManager>();
+        }
+
+        protected void step() {
+            step(1);
         }
 
         protected void step(int frames) {
-            kernel.Get<TestUpdatableManager>().step(frames);
+            mgr.step(frames);
         }
 
         protected int objectCount {
-            get { return kernel.Get<TestUpdatableManager>().Count; }
+            get {
+                return mgr.Count;
+            }
         }
 
         protected IKernel createNewKernel() {
-            return new StandardKernel (getModule());
+            return new StandardKernel (new UnityModule(), getModule());
         }
 
         protected virtual Ninject.Modules.NinjectModule getModule() {

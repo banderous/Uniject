@@ -12,24 +12,24 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin/Debug</OutputPath>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
-    <ConsolePause>false</ConsolePause>
+    <ConsolePause>False</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin/Release</OutputPath>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
-    <ConsolePause>false</ConsolePause>
+    <ConsolePause>False</ConsolePause>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -38,7 +38,6 @@
     <Folder Include="src\module\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\Tests\TestTestableFramework.cs" />
     <Compile Include="src\Impl\framework\BaseInjectedTest.cs" />
     <Compile Include="src\Impl\framework\TestHelper.cs" />
     <Compile Include="src\Impl\framework\TestLogger.cs" />
@@ -56,6 +55,7 @@
     <Compile Include="src\Impl\mock\MockLayerMask.cs" />
     <Compile Include="src\Impl\mock\MockTime.cs" />
     <Compile Include="src\Tests\TestExampleGameObject.cs" />
+    <Compile Include="src\Tests\TestUniject.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Assembly-CSharp-vs.csproj">

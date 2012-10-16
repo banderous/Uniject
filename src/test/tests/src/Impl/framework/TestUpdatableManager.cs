@@ -20,7 +20,12 @@ namespace Tests {
         }
 
         public int Count {
-            get { return objects.Count; }
+            get {
+                if (toAdd.Count > 0) {
+                    throw new InvalidOperationException("TestUpdatableManager has additional objects pending. Call step() before Count");
+                }
+                return objects.Count; 
+            }
         }
 
         private HashSet<TestableGameObject> objects = new HashSet<TestableGameObject>();

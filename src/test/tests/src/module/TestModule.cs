@@ -11,26 +11,20 @@ namespace Tests {
     class TestModule : Ninject.Modules.NinjectModule {
 
         public override void Load () {
-            Bind<ILayerMask> ().To<MockLayerMask> ();
-            Bind<Testable.ITime> ().To<MockTime> ().InSingletonScope();
+            Rebind<ILayerMask>().To<MockLayerMask>();
+            Rebind<Testable.ITime> ().To<MockTime> ().InSingletonScope();
+            Rebind<ILogger>().To<TestLogger>();
+            Rebind<IAudioListener>().To<FakeAudioListener>();
+            Rebind<Testable.INavmeshAgent> ().To<FakeNavmeshAgent> ().InScope(Scoping.GameObjectBoundaryScoper);
+            Rebind<Testable.IRigidBody> ().To<FakeRigidBody> ().InScope(Scoping.GameObjectBoundaryScoper);
+            Rebind<ISphereCollider> ().To<FakeSphereCollider> ().InScope (Scoping.GameObjectBoundaryScoper);
+            Rebind<IAudioSource>().To<FakeAudioSource>().InScope(Scoping.GameObjectBoundaryScoper);
+            Rebind<Testable.IUtil>().To<MockUtil>().InSingletonScope();
+            Rebind<IResourceLoader>().To<MockResourceLoader>().InSingletonScope();
+            Rebind<TestableGameObject>().To<FakeGameObject>().InScope(Scoping.GameObjectBoundaryScoper);
+            Rebind<ITransform>().To<FakeGameObject.FakeTransform>().InScope(Scoping.GameObjectBoundaryScoper);
 
-            Bind<ILogger>().To<TestLogger>();
-
-            Bind<IAudioListener>().To<FakeAudioListener>();
-
-            Bind<Testable.IRigidBody> ().To<FakeRigidBody> ().InScope(Scoping.GameObjectBoundaryScoper);
-            Bind<Testable.INavmeshAgent> ().To<FakeNavmeshAgent> ().InScope(Scoping.GameObjectBoundaryScoper);
-            Bind<ISphereCollider> ().To<FakeSphereCollider> ().InScope (Scoping.GameObjectBoundaryScoper);
-            Bind<IAudioSource>().To<FakeAudioSource>().InScope(Scoping.GameObjectBoundaryScoper);
-
-            Bind<Testable.IUtil>().To<MockUtil>().InSingletonScope();
             Bind<TestUpdatableManager>().ToSelf().InSingletonScope();
-
-            Bind<IResourceLoader>().To<MockResourceLoader>().InSingletonScope();
-
-
-            Bind<TestableGameObject>().To<FakeGameObject>().InScope(Scoping.GameObjectBoundaryScoper);
-            Bind<ITransform>().To<FakeGameObject.FakeTransform>().InScope(Scoping.GameObjectBoundaryScoper);
         }
     }
 }

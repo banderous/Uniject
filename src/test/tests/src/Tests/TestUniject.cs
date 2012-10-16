@@ -4,8 +4,12 @@ using Ninject;
 using Testable;
 
 namespace Tests {
+
+    /// <summary>
+    /// Tests for Uniject.
+    /// </summary>
     [TestFixture()]
-    public class TestTestableFramework : BaseInjectedTest {
+    public class TestUniject : BaseInjectedTest {
 
         [Testable.GameObjectBoundary]
         public class MockComponent : Testable.TestableComponent {
@@ -19,10 +23,11 @@ namespace Tests {
             }
         }
 
-        public class HasMultipleGameObjects {
+        [GameObjectBoundary]
+        public class HasInjectedGameObjects {
             public TestableGameObject a { get; private set; }
             public TestableGameObject b { get; private set; }
-            public HasMultipleGameObjects(TestableGameObject a, TestableGameObject b) {
+            public HasInjectedGameObjects([GameObjectBoundary] TestableGameObject a, [GameObjectBoundary] TestableGameObject b) {
                 this.a = a;
                 this.b = b;
             }
@@ -46,6 +51,9 @@ namespace Tests {
             }
         }
 
+        /// <summary>
+        /// Tests the testable component has its Update method called.
+        /// </summary>
         [Test()]
         public void TestTestableComponentIsUpdated() {
             MockComponent component = kernel.Get<MockComponent>();
@@ -55,12 +63,20 @@ namespace Tests {
             Assert.AreEqual(1, component.updateCount);
         }
 
+        /// <summary>
+        /// Components that feature the <code>GameObjectBoundary</code> attribute
+        /// should get their own GameObject if injected as a dependency.
+        /// </summary>
         [Test]
         public void testNestedTopLevelGameObjectsGetDifferentGameObjects() {
             HasGameObjectBoundaryAsParameter foo = kernel.Get<HasGameObjectBoundaryAsParameter>();
             Assert.AreNotSame(foo.Obj, foo.nested.Obj);
         }
 
+        /// <summary>
+        /// Prefabs that are injected into components should have their own transforms,
+        /// not share those of their parent.
+        /// </summary>
         [Test]
         public void testInjectedPrefabHasDistinctTransform() {
             HasInjectedPrefab prefab = kernel.Get<HasInjectedPrefab>();
@@ -69,6 +85,9 @@ namespace Tests {
             Assert.IsNull(prefab.Obj.transform.Parent);
         }
 
+        /// <summary>
+        /// Tries to load a string from an XML file in the resources folder.
+        /// </summary>
         [Test]
         public void testResources() {
             IResourceLoader loader = kernel.Get<IResourceLoader>();
@@ -95,6 +114,15 @@ namespace Tests {
             kernel.Get<TestableExample>();
             step(1); // Must step a frame to ensure our test updatable manager tracks all objects.
             Assert.AreEqual(2, kernel.Get<TestUpdatableManager>().Count);
+        }
+
+        /// <summary>
+        /// Injected raw <c>TestableGameObject</c>.
+        /// </summary>
+        [Test]
+        public void testHasInjectedObjects() {
+            HasInjectedGameObjects injected = kernel.Get<HasInjectedGameObjects>();
+            Assert.AreNotEqual(injected.a, injected.b);
         }
     }
 }
