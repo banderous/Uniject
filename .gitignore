@@ -6,3 +6,4 @@ src/test/tests/bin/
 src/test/tests/test-results/
 src/test/Test.userprefs
 src/Temp/
+TestResult.xml
