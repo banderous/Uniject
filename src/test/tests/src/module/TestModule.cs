@@ -25,6 +25,8 @@ namespace Tests {
             Rebind<ITransform>().To<FakeGameObject.FakeTransform>().InScope(Scoping.GameObjectBoundaryScoper);
 
             Bind<TestUpdatableManager>().ToSelf().InSingletonScope();
+
+            Bind<TestableGameObject>().ToProvider<PrefabProvider>().WhenTargetHas(typeof(PrefabAttribute));
         }
     }
 }

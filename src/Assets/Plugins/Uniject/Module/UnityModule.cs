@@ -21,7 +21,11 @@ public class UnityModule : NinjectModule {
         Bind<Testable.IResourceLoader>().To<UnityResourceLoader>().InSingletonScope();
         
         Bind<IAudioListener>().To<UnityAudioListener>();
-        Bind<TestableGameObject>().ToProvider<PrefabProvider>().WhenTargetHas(typeof(PrefabAttribute));
         Bind<ITransform>().To<UnityTransform>().InScope(Scoping.GameObjectBoundaryScoper);
+
+        // Resource bindings.
+        Bind<TestableGameObject>().ToProvider<PrefabProvider>().WhenTargetHas(typeof(PrefabAttribute));
+        Bind<AudioClip>().ToProvider<ResourceProvider<AudioClip>>().WhenTargetHas(typeof(Resource));
+
     }
 }

@@ -12,8 +12,15 @@ using Testable;
 [GameObjectBoundary]
 public class TestableExample : TestableComponent {
 
-    public TestableExample(TestableGameObject parent, ISphereCollider collider, IRigidBody body,
-                          [PrefabAttribute("Sphere")] TestableGameObject sphere) : base(parent) {
+    private IAudioSource source;
+    private AudioClip beep;
+
+    public TestableExample(TestableGameObject parent, ISphereCollider collider, IRigidBody body, IAudioSource source,
+                          [PrefabAttribute("mesh/sphere")] TestableGameObject sphere,
+                          [Resource("audio/beep")] AudioClip beep) : base(parent) {
+        this.source = source;
+        this.beep = beep;
+
         sphere.transform.Parent = this.Obj.transform;
 
         collider.radius = 0.5f;
@@ -25,6 +32,10 @@ public class TestableExample : TestableComponent {
     public override void Update() {
         if (Obj.transform.Position.y < -100) {
             Obj.transform.Position = Vector3.zero;
+
+            if (!source.isPlaying) {
+                source.playOneShot(beep);
+            }
         }
     }
 }

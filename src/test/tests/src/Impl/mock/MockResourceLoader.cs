@@ -52,6 +52,15 @@ namespace Tests {
             throw new FileNotFoundException (path);
         }
 
+        public T loadResource<T>(string path) where T : UnityEngine.Object {
+            string filepath = Path.Combine(resourcesPath, path);
+            if (exists(filepath)) {
+                return kernel.Get<T>();
+            }
+
+            throw new FileNotFoundException(filepath);
+        }
+
         private static bool exists(string filepath) {
             FileInfo file = new FileInfo (filepath + ".ogg");
             if (file.Exists) {

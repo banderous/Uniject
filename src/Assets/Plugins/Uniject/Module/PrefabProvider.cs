@@ -13,10 +13,18 @@ public class PrefabAttribute : GameObjectBoundary {
     }
 }
 
+[System.AttributeUsage(System.AttributeTargets.Parameter)]
+public class Resource : System.Attribute {
+    public string Path { get; private set; }
+    public Resource(string path) {
+        this.Path = path;
+    }
+}
+
 /// <summary>
 /// A <c>Provider</c> that instantiates Unity prefabs wrapped as <c>TestableGameObject</c>.
 /// </summary>
-class PrefabProvider : Ninject.Activation.Provider<TestableGameObject> {
+public class PrefabProvider : Ninject.Activation.Provider<TestableGameObject> {
     
     private IResourceLoader loader;
     public PrefabProvider(IResourceLoader loader) {

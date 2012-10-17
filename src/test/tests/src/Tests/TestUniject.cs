@@ -2,6 +2,8 @@ using System;
 using NUnit.Framework;
 using Ninject;
 using Testable;
+using UnityEngine;
+using System.IO;
 
 namespace Tests {
 
@@ -45,7 +47,7 @@ namespace Tests {
         [Testable.GameObjectBoundary]
         public class HasInjectedPrefab : Testable.TestableComponent {
             public TestableGameObject nested { get; private set; }
-            public HasInjectedPrefab(TestableGameObject parent, [PrefabAttribute("Sphere")] TestableGameObject nested) : base(parent) {
+            public HasInjectedPrefab(TestableGameObject parent, [PrefabAttribute("mesh/sphere")] TestableGameObject nested) : base(parent) {
                 this.nested = nested;
                 nested.transform.Parent = this.Obj.transform;
             }
@@ -91,7 +93,7 @@ namespace Tests {
         [Test]
         public void testResources() {
             IResourceLoader loader = kernel.Get<IResourceLoader>();
-            Assert.AreEqual("Hello World", loader.loadDoc("test").Element("element").Value);
+            Assert.AreEqual("Hello World", loader.loadDoc("xml/test").Element("element").Value);
         }
 
         [Test]
@@ -102,7 +104,7 @@ namespace Tests {
 
         [Test]
         public void testPrefabLoading() {
-            Assert.IsNotNull(kernel.Get<IResourceLoader>().instantiate("Sphere"));
+            Assert.IsNotNull(kernel.Get<IResourceLoader>().instantiate("mesh/sphere"));
         }
 
         /// <summary>
@@ -123,6 +125,45 @@ namespace Tests {
         public void testHasInjectedObjects() {
             HasInjectedGameObjects injected = kernel.Get<HasInjectedGameObjects>();
             Assert.AreNotEqual(injected.a, injected.b);
+        }
+
+        private class HasAttributedAudioClip {
+            public AudioClip clip { get; private set; }
+            public HasAttributedAudioClip([Resource("audio/beep")] AudioClip clip) {
+                this.clip = clip;
+            }
+        }
+
+        [Test]
+        public void testAttributedAudioClipLoads() {
+            Assert.IsNotNull(kernel.Get<HasAttributedAudioClip>());
+        }
+
+        [Test]
+        public void testMissingAttributedAudioClipErrors() {
+            try {
+                kernel.Get<HasMissingAttributedAudioClip>();
+                Assert.Fail();
+            } catch (FileNotFoundException) {
+            }
+        }
+
+        private class HasMissingAttributedAudioClip {
+            public HasMissingAttributedAudioClip([Resource("does/not/exist")] AudioClip clip) {
+            }
+        }
+
+        private class HasMissingAttributedPrefab {
+            public HasMissingAttributedPrefab([PrefabAttribute("does/not/exist")] TestableGameObject obj) { }
+        }
+
+        [Test]
+        public void testMissingAttributedPrefabErrors() {
+            try {
+                kernel.Get<HasMissingAttributedPrefab>();
+                Assert.Fail();
+            } catch (FileNotFoundException) {
+            }
         }
     }
 }

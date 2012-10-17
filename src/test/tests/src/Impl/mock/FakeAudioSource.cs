@@ -16,6 +16,8 @@ namespace Tests {
 
         public void Play() {
         }
+
+        public bool isPlaying { get; set; }
     }
 }
 

@@ -10,6 +10,7 @@ namespace Testable {
         Material loadMaterial(string path);
 		XDocument loadDoc(string path);
         TestableGameObject instantiate(string path);
+        T loadResource<T>(string path) where T : UnityEngine.Object;
     }
 }
 

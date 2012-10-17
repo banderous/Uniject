@@ -26,6 +26,10 @@ namespace Testable {
             GameObject obj = (GameObject) GameObject.Instantiate(Resources.Load(path));
             return new UnityGameObject(obj);
         }
+
+        public T loadResource<T>(string path) where T : UnityEngine.Object {
+            return (T)UnityEngine.Resources.Load(path);
+        }
     }
 }
 

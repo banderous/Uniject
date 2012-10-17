@@ -21,10 +21,12 @@ public class UnityAudioSource : Testable.IAudioSource {
         source.PlayOneShot(clip);
     }
 
-	#region IAudioSource implementation
 	public void Play ()
 	{
 		source.Play();
 	}
-	#endregion
+
+    public bool isPlaying {
+        get { return source.isPlaying; }
+    }
 }
