@@ -27,6 +27,9 @@ namespace Testable {
 
         public virtual void OnDestroy() {
         }
+
+        public virtual void OnCollisionEnter(Collision collision) {
+        }
     }
 }
 

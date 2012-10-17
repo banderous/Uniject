@@ -14,6 +14,7 @@ public class UnityModule : NinjectModule {
         Bind<IRigidBody>().To<UnityRigidBody>().InScope(Scoping.GameObjectBoundaryScoper);
         Bind<INavmeshAgent>().To<UnityNavmeshAgent>().InScope(Scoping.GameObjectBoundaryScoper);
         Bind<ISphereCollider>().To<UnitySphereCollider>().InScope(Scoping.GameObjectBoundaryScoper);
+        Bind<IBoxCollider>().To<UnityBoxCollider>().InScope(Scoping.GameObjectBoundaryScoper);
         
         Bind<IMaths>().To<UnityMath>().InSingletonScope();
         Bind<ITime>().To<UnityTime>().InSingletonScope();
@@ -26,6 +27,7 @@ public class UnityModule : NinjectModule {
         // Resource bindings.
         Bind<TestableGameObject>().ToProvider<PrefabProvider>().WhenTargetHas(typeof(Resource));
         Bind<AudioClip>().ToProvider<ResourceProvider<AudioClip>>().WhenTargetHas(typeof(Resource));
-
+        Bind<PhysicMaterial>().ToProvider<ResourceProvider<PhysicMaterial>>();
+        Bind<IPhysicMaterial>().To<UnityPhysicsMaterial>();
     }
 }

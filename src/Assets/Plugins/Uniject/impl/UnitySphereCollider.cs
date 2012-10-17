@@ -4,6 +4,8 @@ using UnityEngine;
 namespace Testable {
     public class UnitySphereCollider : ISphereCollider {
         private SphereCollider collider;
+        private UnityPhysicsMaterial mat;
+
         public UnitySphereCollider(GameObject obj) {
             this.collider = obj.AddComponent<SphereCollider>();
         }
@@ -21,6 +23,14 @@ namespace Testable {
         public Vector3 center {
             get { return collider.center; }
             set { collider.center = value; }
+        }
+
+        public IPhysicMaterial material {
+            get { return mat; }
+            set {
+                mat = (UnityPhysicsMaterial) value;
+                collider.material = mat.material;
+            }
         }
     }
 }

@@ -2,9 +2,9 @@ using System;
 using UnityEngine;
 
 namespace Testable {
-    public interface ISphereCollider : ICollider {
-        float radius { get; set; }
+    public interface IBoxCollider : ICollider {
         Vector3 center { get; set; }
+        Vector3 size { get; set; }
     }
 }
 

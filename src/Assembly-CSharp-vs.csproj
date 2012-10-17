@@ -44,7 +44,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\src\Box.cs" />
      <Compile Include="Assets\src\InjectionRoot.cs" />
+     <Compile Include="Assets\src\Sphere.cs" />
+     <Compile Include="Assets\src\TestableCollisions.cs" />
      <Compile Include="Assets\src\TestableExample.cs" />
      <None Include="Assets\resources\xml\test.xml" />
  <Reference Include="Assets\Plugins\Uniject\Assembly\Ninject">

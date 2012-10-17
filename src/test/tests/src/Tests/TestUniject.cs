@@ -165,6 +165,30 @@ namespace Tests {
             } catch (FileNotFoundException) {
             }
         }
+
+        private class HasPhysicMaterial {
+            public HasPhysicMaterial([Resource("physic/bouncy")] Testable.IPhysicMaterial mat) {
+            }
+        }
+
+        [Test]
+        public void testHasPhysicMaterial() {
+            kernel.Get<HasPhysicMaterial>();
+        }
+
+        private class HasNonExistentPhysicMaterial {
+            public HasNonExistentPhysicMaterial([Resource("does/not/exist")] Testable.IPhysicMaterial mat) {
+            }
+        }
+
+        [Test]
+        public void testHasNonExistentPhysicMaterial() {
+            try {
+                kernel.Get<HasNonExistentPhysicMaterial>();
+                Assert.Fail();
+            } catch (FileNotFoundException) {
+            }
+        }
     }
 }
 

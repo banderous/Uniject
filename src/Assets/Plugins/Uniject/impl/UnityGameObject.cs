@@ -34,5 +34,8 @@ public class UnityGameObject : TestableGameObject {
         get { return obj.layer; }
         set { obj.layer = value; }
     }
+
+    public void OnCollisionEnter(Testable.Collision c) {
+    }
 }
 

@@ -9,11 +9,11 @@ namespace Testable {
         }
 
         protected override T CreateInstance(Ninject.Activation.IContext context) {
-            object[] attributes = context.Request.Target.GetCustomAttributes(typeof(Resource), false);
-            if (attributes == null || attributes.Length != 1) {
+            Resource resource = Scoping.getResourcePath(context);
+            if (resource == null) {
                 throw new ArgumentException("Injected resources must have Resource attributes");
             }
-            Resource resource = (Resource) attributes[0];
+
             return loader.loadResource<T>(resource.Path);
         }
     }

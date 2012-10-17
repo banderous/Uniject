@@ -20,6 +20,18 @@ namespace Testable {
             
             return context;
         }
+
+        public static Resource getResourcePath(Ninject.Activation.IContext context) {
+            if (context.Request.Target != null && context.Request.Target.IsDefined(typeof(Resource), false)) {
+                return (Resource) context.Request.Target.GetCustomAttributes(typeof(Resource), false)[0];
+            }
+            
+            if (context.Request.ParentContext != null) {
+                return getResourcePath(context.Request.ParentContext);
+            }
+
+            return null;
+        }
     }
 }
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Testable;
 using UnityEngine;
 using System.IO;
@@ -7,10 +8,16 @@ using Ninject;
 using Moq;
 
 namespace Tests {
+
+    /// <summary>
+    /// Mock resource loader.
+    /// TODO: fix the ludicrous, broken file existence checking.
+    /// </summary>
     public class MockResourceLoader : Testable.IResourceLoader {
 
         private string resourcesPath = Path.GetFullPath("../../../../Assets/resources");
         private IKernel kernel;
+        private static List<string> knownExtensions = new List<string>() { ".ogg", ".wav", ".mat", ".mp3", ".physicMaterial" };
 
         public MockResourceLoader(IKernel kernel) {
             this.kernel = kernel;
@@ -62,19 +69,11 @@ namespace Tests {
         }
 
         private static bool exists(string filepath) {
-            FileInfo file = new FileInfo (filepath + ".ogg");
-            if (file.Exists) {
-                return true;
-            }
-
-            file = new FileInfo (filepath + ".wav");
-            if (file.Exists) {
-                return true;
-            }
-
-            file = new FileInfo (filepath + ".mat");
-            if (file.Exists) {
-                return true;
+            foreach (string extension in knownExtensions) {
+                FileInfo file = new FileInfo (filepath + extension);
+                if (file.Exists) {
+                    return true;
+                }
             }
 
             return false;
