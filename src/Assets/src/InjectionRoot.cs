@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class InjectionRoot : MonoBehaviour {
 
+    public string typeToInstantiate;
     public void Start() {
-        TestableExample example = UnityInjector.get().Get<TestableExample>();
-        example.Obj.name = "Example";
+        UnityInjector.get().Get(Type.GetType(typeToInstantiate), new Ninject.Parameters.IParameter[] { });
     }
 }
