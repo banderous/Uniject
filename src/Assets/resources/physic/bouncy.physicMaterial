@@ -8,9 +8,9 @@ PhysicMaterial:
   m_Name: bouncy
   dynamicFriction: .400000006
   staticFriction: .400000006
-  bounciness: 0
+  bounciness: 1
   frictionCombine: 0
-  bounceCombine: 0
+  bounceCombine: 3
   frictionDirection2: {x: 0, y: 0, z: 0}
   dynamicFriction2: 0
   staticFriction2: 0

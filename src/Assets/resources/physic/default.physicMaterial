@@ -5,7 +5,7 @@ PhysicMaterial:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: sphere
+  m_Name: default
   dynamicFriction: .400000006
   staticFriction: .400000006
   bounciness: 0
