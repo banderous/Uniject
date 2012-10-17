@@ -47,7 +47,7 @@ namespace Tests {
         [Testable.GameObjectBoundary]
         public class HasInjectedPrefab : Testable.TestableComponent {
             public TestableGameObject nested { get; private set; }
-            public HasInjectedPrefab(TestableGameObject parent, [PrefabAttribute("mesh/sphere")] TestableGameObject nested) : base(parent) {
+            public HasInjectedPrefab(TestableGameObject parent, [Resource("mesh/sphere")] TestableGameObject nested) : base(parent) {
                 this.nested = nested;
                 nested.transform.Parent = this.Obj.transform;
             }
@@ -154,7 +154,7 @@ namespace Tests {
         }
 
         private class HasMissingAttributedPrefab {
-            public HasMissingAttributedPrefab([PrefabAttribute("does/not/exist")] TestableGameObject obj) { }
+            public HasMissingAttributedPrefab([Resource("does/not/exist")] TestableGameObject obj) { }
         }
 
         [Test]

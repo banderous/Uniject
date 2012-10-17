@@ -26,7 +26,7 @@ namespace Tests {
 
             Bind<TestUpdatableManager>().ToSelf().InSingletonScope();
 
-            Bind<TestableGameObject>().ToProvider<PrefabProvider>().WhenTargetHas(typeof(PrefabAttribute));
+            Bind<TestableGameObject>().ToProvider<PrefabProvider>().WhenTargetHas(typeof(Resource));
         }
     }
 }

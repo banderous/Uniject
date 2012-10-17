@@ -3,16 +3,9 @@ using System;
 using Testable;
 
 /// <summary>
-/// Denotes a parameter should be instantiated as a Unity prefab.
+/// Denotes a parameter should be loaded as a Resource from a specified path.
+/// Suitable for prefabs, audio clips etc.
 /// </summary>
-[System.AttributeUsage(System.AttributeTargets.Parameter)]
-public class PrefabAttribute : GameObjectBoundary {
-    public string Path { get; private set; }
-    public PrefabAttribute(string path) {
-        this.Path = path;
-    }
-}
-
 [System.AttributeUsage(System.AttributeTargets.Parameter)]
 public class Resource : System.Attribute {
     public string Path { get; private set; }
@@ -32,7 +25,7 @@ public class PrefabProvider : Ninject.Activation.Provider<TestableGameObject> {
     }
     
     protected override TestableGameObject CreateInstance(Ninject.Activation.IContext context) {
-        PrefabAttribute attrib = (PrefabAttribute) context.Request.Target.GetCustomAttributes(typeof(PrefabAttribute), false)[0];
+        Resource attrib = (Resource) context.Request.Target.GetCustomAttributes(typeof(Resource), false)[0];
         return loader.instantiate(attrib.Path);
     }
 }

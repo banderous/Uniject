@@ -16,7 +16,7 @@ public class TestableExample : TestableComponent {
     private AudioClip beep;
 
     public TestableExample(TestableGameObject parent, ISphereCollider collider, IRigidBody body, IAudioSource source,
-                          [PrefabAttribute("mesh/sphere")] TestableGameObject sphere,
+                          [Resource("mesh/sphere")] TestableGameObject sphere,
                           [Resource("audio/beep")] AudioClip beep) : base(parent) {
         this.source = source;
         this.beep = beep;
