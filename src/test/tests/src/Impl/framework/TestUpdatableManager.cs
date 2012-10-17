@@ -8,11 +8,18 @@ namespace Tests {
      */
     public class TestUpdatableManager {
         public void step(int numUpdates) {
-            foreach (TestableGameObject o in toAdd) {
-                objects.Add(o);
-            }
-            toAdd.Clear();
             for (int t = 0; t < numUpdates; t++) {
+
+                foreach (TestableGameObject o in toAdd) {
+                    objects.Add(o);
+                }
+                toAdd.Clear();
+
+                foreach (TestableGameObject o in toRemove) {
+                    objects.Remove(o);
+                }
+                toRemove.Clear();
+
                 foreach (TestableGameObject obj in objects) {
                     obj.Update();
                 }
@@ -30,11 +37,20 @@ namespace Tests {
 
         private HashSet<TestableGameObject> objects = new HashSet<TestableGameObject>();
         private HashSet<TestableGameObject> toAdd = new HashSet<TestableGameObject>();
+        private HashSet<TestableGameObject> toRemove = new HashSet<TestableGameObject>();
+
         public void RegisterGameobject(TestableGameObject obj) {
             if (objects.Contains(obj) || toAdd.Contains(obj)) {
                 throw new ArgumentException("Duplicate game object");
             }
             toAdd.Add(obj);
+        }
+
+        public void UnRegisterGameobject(TestableGameObject obj) {
+            if (!(objects.Contains(obj) || toAdd.Contains(obj))) {
+                throw new ArgumentException("Removing non existent game object");
+            }
+            toRemove.Add(obj);
         }
     }
 }

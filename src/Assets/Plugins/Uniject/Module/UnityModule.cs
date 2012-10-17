@@ -23,6 +23,7 @@ public class UnityModule : NinjectModule {
         
         Bind<IAudioListener>().To<UnityAudioListener>();
         Bind<ITransform>().To<UnityTransform>().InScope(Scoping.GameObjectBoundaryScoper);
+        Bind<ILight>().To<UnityLight>().InScope(Scoping.GameObjectBoundaryScoper);
 
         // Resource bindings.
         Bind<TestableGameObject>().ToProvider<PrefabProvider>().WhenTargetHas(typeof(Resource));

@@ -53,6 +53,12 @@ namespace Testable {
             return null;
         }
 
+        public void OnCollisionEnter(Testable.Collision c) {
+            for (int t = 0; t < components.Count; t++) {
+                components[t].OnCollisionEnter(c);
+            }
+        }
+
         public abstract void setActiveRecursively(bool active);
         public abstract bool active { get; set; }
         public abstract string name { get; set; }

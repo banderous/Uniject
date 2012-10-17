@@ -55,9 +55,17 @@ namespace Tests {
             }
         }
 
+        private TestUpdatableManager manager;
+
         public FakeGameObject(ITransform transform, TestUpdatableManager manager) : base(transform) {
+            this.manager = manager;
             manager.RegisterGameobject(this);
             active = true;
+        }
+
+        public override void Destroy() {
+            base.Destroy();
+            manager.UnRegisterGameobject(this);
         }
 
         public override string name { get; set; }

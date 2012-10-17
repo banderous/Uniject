@@ -49,6 +49,7 @@
      <Compile Include="Assets\Plugins\Uniject\Interface\IBoxCollider.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\ICollider.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\ILayerMask.cs" />
+     <Compile Include="Assets\Plugins\Uniject\Interface\ILight.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\ILogger.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\IMaths.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\INavmeshAgent.cs" />
@@ -64,6 +65,7 @@
      <Compile Include="Assets\Plugins\Uniject\Module\ResourceProvider.cs" />
      <Compile Include="Assets\Plugins\Uniject\Module\UnityModule.cs" />
      <Compile Include="Assets\Plugins\Uniject\Module\UnityNinjectSettings.cs" />
+     <Compile Include="Assets\Plugins\Uniject\Util\IntervalBasedCallback.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\AndroidPlatformUtil.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\Collision.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\GameObjectBoundary.cs" />
@@ -79,6 +81,7 @@
      <Compile Include="Assets\Plugins\Uniject\impl\UnityGameObjectBridge.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityInjector.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityLayerMask.cs" />
+     <Compile Include="Assets\Plugins\Uniject\impl\UnityLight.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityLogger.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityMath.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityNavmeshAgent.cs" />

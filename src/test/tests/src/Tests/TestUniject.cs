@@ -65,6 +65,14 @@ namespace Tests {
             Assert.AreEqual(1, component.updateCount);
         }
 
+        [Test]
+        public void TestDestroyedObjectsNotUpdated() {
+            MockComponent component = kernel.Get<MockComponent>();
+            component.Obj.Destroy();
+            step();
+            Assert.AreEqual(0, component.updateCount);
+        }
+
         /// <summary>
         /// Components that feature the <code>GameObjectBoundary</code> attribute
         /// should get their own GameObject if injected as a dependency.
@@ -187,6 +195,22 @@ namespace Tests {
                 kernel.Get<HasNonExistentPhysicMaterial>();
                 Assert.Fail();
             } catch (FileNotFoundException) {
+            }
+        }
+
+        [Test]
+        public void testOnCollisionEnterCalled() {
+            HasOnCollision has = kernel.Get<HasOnCollision>();
+            Assert.IsFalse(has.onCollisionEnterCalled);
+            has.Obj.OnCollisionEnter(new Testable.Collision());
+            Assert.IsTrue(has.onCollisionEnterCalled);
+        }
+
+        public class HasOnCollision : TestableComponent {
+            public HasOnCollision(TestableGameObject obj) : base(obj) { }
+            public bool onCollisionEnterCalled { get; private set; }
+            public override void OnCollisionEnter(Testable.Collision collision) {
+                onCollisionEnterCalled = true;
             }
         }
     }

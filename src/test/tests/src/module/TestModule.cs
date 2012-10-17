@@ -19,6 +19,7 @@ namespace Tests {
             Rebind<Testable.IRigidBody> ().To<FakeRigidBody> ().InScope(Scoping.GameObjectBoundaryScoper);
             Rebind<ISphereCollider> ().ToProvider<MockProvider<ISphereCollider>> ().InScope (Scoping.GameObjectBoundaryScoper);
             Rebind<IBoxCollider> ().ToProvider<MockProvider<IBoxCollider>> ().InScope (Scoping.GameObjectBoundaryScoper);
+            Rebind<ILight> ().ToProvider<MockProvider<ILight>> ().InScope (Scoping.GameObjectBoundaryScoper);
 
             Rebind<IAudioSource>().To<FakeAudioSource>().InScope(Scoping.GameObjectBoundaryScoper);
             Rebind<Testable.IUtil>().To<MockUtil>().InSingletonScope();
