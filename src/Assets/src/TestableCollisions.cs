@@ -50,7 +50,7 @@ public class TestableCollisions {
         this.rand = rand;
 
         caller.callback = onSpawn;
-        caller.interval = new TimeSpan(0, 0, 3);
+        caller.interval = TimeSpan.FromSeconds(2);
         box.Obj.transform.localScale = new UnityEngine.Vector3(50, 1, 50);
     }
 
