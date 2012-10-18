@@ -16,12 +16,10 @@ The code under test is a very simple mono behaviour equivalent that has a Sphere
 The project has a unit test that verifies this behaviour, and a sample scene that spawns an instance of it.
 
 <dl>
-  <dt>To run the Unit tests</dt>
+  <dt>To build and run the Unit tests (OSX)</dt>
 </dl>
 
-Open the MonoDevelop project at src/test/Test.sln
-
-The project is setup to reference the projects that Unity automatically generates, and has its own C Sharp project containing the unit tests.
+Run BUILD.sh
 
 <dl>
   <dt>To run the example scene</dt>
