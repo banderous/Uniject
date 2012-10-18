@@ -18,7 +18,7 @@ public class UnityGameObject : TestableGameObject {
 
     public override bool active {
         get { return obj.active; }
-        set { obj.SetActiveRecursively(false); }
+        set { obj.active = value; }
     }
 
     public override string name {
