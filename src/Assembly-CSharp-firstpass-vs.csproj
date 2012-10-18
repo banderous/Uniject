@@ -68,6 +68,7 @@
      <Compile Include="Assets\Plugins\Uniject\Util\IntervalBasedCallback.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\AndroidPlatformUtil.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\Collision.cs" />
+     <Compile Include="Assets\Plugins\Uniject\impl\Factory.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\GameObjectBoundary.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\LevelLoadListener.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\Scoping.cs" />

@@ -1,4 +1,3 @@
-using Ninject;
 using System;
 using Testable;
 
@@ -39,14 +38,14 @@ public class BouncingLight : TestableComponent {
 /// </summary>
 public class TestableCollisions {
 
-    private IKernel kernel;
+    private Factory<BouncingLight> factory;
     private Random rand;
 
     public TestableCollisions(UnijectUtil.IntervalBasedCallback caller,
                               [GameObjectBoundary] Box box,
-                              IKernel kernel,
+                              Factory<BouncingLight> factory,
                               Random rand) {
-        this.kernel = kernel;
+        this.factory = factory;
         this.rand = rand;
 
         caller.callback = onSpawn;
@@ -55,7 +54,7 @@ public class TestableCollisions {
     }
 
     private void onSpawn() {
-        BouncingLight light = kernel.Get<BouncingLight>();
+        BouncingLight light = factory.create();
         light.Obj.transform.Translate(new UnityEngine.Vector3((float) rand.NextDouble(), 4 + (float) rand.NextDouble() * 10.0f, (float) rand.NextDouble()));
     }
 }
