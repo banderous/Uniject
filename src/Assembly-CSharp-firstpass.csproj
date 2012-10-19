@@ -18,7 +18,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_3_5_5;UNITY_3_5;UNITY_EDITOR;ENABLE_PROFILER;UNITY_STANDALONE_OSX;ENABLE_GENERICS;ENABLE_DUCK_TYPING;ENABLE_TERRAIN;ENABLE_MOVIES;ENABLE_WEBCAM;ENABLE_MICROPHONE;ENABLE_NETWORK;ENABLE_CLOTH;ENABLE_WWW;ENABLE_SUBSTANCE</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_3_5_5;UNITY_3_5;UNITY_EDITOR;ENABLE_PROFILER;UNITY_ANDROID;ENABLE_GENERICS;ENABLE_TERRAIN;ENABLE_WEBCAM;ENABLE_NETWORK;ENABLE_CLOTH;ENABLE_WWW</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -48,6 +48,7 @@
      <Compile Include="Assets\Plugins\Uniject\Interface\IAudioSource.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\IBoxCollider.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\ICollider.cs" />
+     <Compile Include="Assets\Plugins\Uniject\Interface\IInput.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\ILayerMask.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\ILight.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\ILogger.cs" />
@@ -81,6 +82,7 @@
      <Compile Include="Assets\Plugins\Uniject\impl\UnityGameObject.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityGameObjectBridge.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityInjector.cs" />
+     <Compile Include="Assets\Plugins\Uniject\impl\UnityInput.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityLayerMask.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityLight.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityLogger.cs" />

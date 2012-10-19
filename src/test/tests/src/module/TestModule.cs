@@ -10,13 +10,19 @@ using Moq;
 namespace Tests {
     class TestModule : Ninject.Modules.NinjectModule {
 
+        private IInput input;
+        public TestModule(IInput mockInput) {
+            this.input = mockInput;
+        }
+
         public override void Load () {
             Rebind<ILayerMask>().To<MockLayerMask>();
             Rebind<Testable.ITime> ().To<MockTime> ().InSingletonScope();
             Rebind<ILogger>().To<TestLogger>();
             Rebind<IAudioListener>().To<FakeAudioListener>();
             Rebind<Testable.INavmeshAgent> ().To<FakeNavmeshAgent> ().InScope(Scoping.GameObjectBoundaryScoper);
-            Rebind<Testable.IRigidBody> ().To<FakeRigidBody> ().InScope(Scoping.GameObjectBoundaryScoper);
+
+            Rebind<Testable.IRigidBody> ().ToProvider<MockProvider<IRigidBody>> ().InScope(Scoping.GameObjectBoundaryScoper);
             Rebind<ISphereCollider> ().ToProvider<MockProvider<ISphereCollider>> ().InScope (Scoping.GameObjectBoundaryScoper);
             Rebind<IBoxCollider> ().ToProvider<MockProvider<IBoxCollider>> ().InScope (Scoping.GameObjectBoundaryScoper);
             Rebind<ILight> ().ToProvider<MockProvider<ILight>> ().InScope (Scoping.GameObjectBoundaryScoper);
@@ -31,6 +37,7 @@ namespace Tests {
 
             Bind<TestableGameObject>().ToProvider<PrefabProvider>().WhenTargetHas(typeof(Resource));
             Rebind<IPhysicMaterial>().ToProvider<MockProvider<IPhysicMaterial>>();
+            Rebind<IInput>().ToConstant(input);
         }
     }
 }

@@ -4,6 +4,7 @@ using Testable;
 /// <summary>
 /// A bouncy sphere containing a light, that changes its colour when it hits something.
 /// </summary>
+[GameObjectBoundary]
 public class BouncingLight : TestableComponent {
     
     private ILight light;

@@ -20,6 +20,7 @@ public class UnityModule : NinjectModule {
         Bind<ITime>().To<UnityTime>().InSingletonScope();
         Bind<ILayerMask>().To<UnityLayerMask>().InSingletonScope();
         Bind<Testable.IResourceLoader>().To<UnityResourceLoader>().InSingletonScope();
+        Bind<IInput>().To<UnityInput>().InSingletonScope();
         
         Bind<IAudioListener>().To<UnityAudioListener>();
         Bind<ITransform>().To<UnityTransform>().InScope(Scoping.GameObjectBoundaryScoper);

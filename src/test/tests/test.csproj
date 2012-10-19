@@ -46,7 +46,6 @@
     <Compile Include="src\Impl\mock\FakeAudioSource.cs" />
     <Compile Include="src\Impl\mock\FakeGameObject.cs" />
     <Compile Include="src\Impl\mock\FakeNavmeshAgent.cs" />
-    <Compile Include="src\Impl\mock\FakeRigidBody.cs" />
     <Compile Include="src\Impl\mock\MockResourceLoader.cs" />
     <Compile Include="src\Impl\mock\MockUtil.cs" />
     <Compile Include="src\module\TestModule.cs" />
@@ -58,6 +57,7 @@
     <Compile Include="src\Impl\framework\FileVerifyingResourceProvider.cs" />
     <Compile Include="src\Tests\TestCollisions.cs" />
     <Compile Include="src\Impl\mock\MockProvider.cs" />
+    <Compile Include="src\Tests\TestTestableInput.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Assembly-CSharp-vs.csproj">

@@ -36,12 +36,11 @@ namespace Tests {
         }
 
         protected IKernel createNewKernel() {
-            return new StandardKernel (new UnityModule(), getModule());
+            mockInput = new Moq.Mock<Testable.IInput>();
+            return new StandardKernel (new UnityModule(), new TestModule(mockInput.Object));
         }
 
-        protected virtual Ninject.Modules.NinjectModule getModule() {
-            return new TestModule();
-        }
+        protected Moq.Mock<Testable.IInput> mockInput;
 
         protected MockUtil getUtilInstance() {
             return (MockUtil) kernel.Get<Testable.IUtil>();
