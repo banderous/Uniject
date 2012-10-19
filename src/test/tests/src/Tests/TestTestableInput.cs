@@ -15,6 +15,9 @@ namespace Tests {
             scene = kernel.Get<TestableInput>();
         }
 
+        /// <summary>
+        /// If there is no input, no force should be applied to the sphere.
+        /// </summary>
         [Test]
         public void testNoMovement() {
             Mock<IRigidBody> mockBody = Mock.Get(scene.sphere.body);
@@ -22,6 +25,10 @@ namespace Tests {
             mockBody.Verify(mock => mock.AddForce(It.IsAny<Vector3>()), Times.Never());
         }
 
+        /// <summary>
+        /// If positive horizontal input is given, a force should be applied to move
+        /// the ball to the right.
+        /// </summary>
         [Test]
         public void testMovementToRight() {
             mockInput.Setup(mock => mock.GetAxis("Horizontal")).Returns(1);

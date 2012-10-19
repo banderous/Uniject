@@ -2,6 +2,10 @@ using System;
 using UnityEngine;
 
 namespace Testable {
+
+    /// <summary>
+    /// Extracted from UnityEngine.Input.
+    /// </summary>
     public interface IInput {
         Vector3 mousePosition { get; }
         bool anyKey { get; }
