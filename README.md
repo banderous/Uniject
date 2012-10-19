@@ -9,14 +9,26 @@ Uniject, the Testability framework for Unity3D
 * Constructors!
 * An extremely flexible code base – in short, the benefits of DI + IOC.
 
-Uniject comes integrated into a sample Unity project.
+<dl>
+  <dt>Prerequisites</dt>
+</dl>
 
-The code under test is a very simple mono behaviour equivalent that has a Sphere collider and a rigid body. When its transform falls below a threshold value, it resets it to the origin.
+* MonoDevelop 3.0 - NOT the Unity bundled version
 
-The project has a unit test that verifies this behaviour, and a sample scene that spawns an instance of it.
+The Unity bundled version of Monodevelop is borked; the unit test runner is broken. Get the latest version from <a href="http://monodevelop.com/Download">monodevelop.com</a>
 
 <dl>
-  <dt>To build and run the Unit tests (OSX)</dt>
+  <dt>To get started</dt>
+</dl>
+
+* Open the project in Unity
+* Choose Assets/Sync Monodevelop project to rebuild the Unity managed csproj files
+* In MonoDevelop 3.0, open the test project at /src/test/Test.sln
+* Run the unit tests
+* Load and run the example scenes within Unity
+
+<dl>
+  <dt>To build and run the Unit tests from the terminal (OSX)</dt>
 </dl>
 
 Run BUILD.sh
@@ -27,4 +39,4 @@ Run BUILD.sh
 
 Open the project in Unity and load the 'example' scene.
 
-<a href="http://outlinegames.com/2012/08/29/on-testability/">Read on</a>
+<a href="http://outlinegames.com/2012/08/29/on-testability/">Read more about Uniject</a>
