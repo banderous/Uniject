@@ -36,14 +36,14 @@ namespace Tests {
         }
 
         protected IKernel createNewKernel() {
-            mockInput = new Moq.Mock<Testable.IInput>();
+            mockInput = new Moq.Mock<Uniject.IInput>();
             return new StandardKernel (new UnityModule(), new TestModule(mockInput.Object));
         }
 
-        protected Moq.Mock<Testable.IInput> mockInput;
+        protected Moq.Mock<Uniject.IInput> mockInput;
 
         protected MockUtil getUtilInstance() {
-            return (MockUtil) kernel.Get<Testable.IUtil>();
+            return (MockUtil) kernel.Get<Uniject.IUtil>();
         }
 
         private object getScope(Ninject.Activation.IContext context) {

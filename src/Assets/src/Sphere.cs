@@ -1,5 +1,5 @@
 using System;
-using Testable;
+using Uniject;
 
 public class Sphere {
     public TestableGameObject obj { get; private set; }

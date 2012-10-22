@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Testable {
+namespace Uniject.Impl {
     public class UnityTime : ITime {
 
         public float DeltaTime {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Ninject.Modules;
 using Tests;
-using Testable;
+using Uniject;
 using Moq;
 
 namespace Tests {
@@ -17,18 +17,18 @@ namespace Tests {
 
         public override void Load () {
             Rebind<ILayerMask>().To<MockLayerMask>();
-            Rebind<Testable.ITime> ().To<MockTime> ().InSingletonScope();
+            Rebind<ITime> ().To<MockTime> ().InSingletonScope();
             Rebind<ILogger>().To<TestLogger>();
             Rebind<IAudioListener>().To<FakeAudioListener>();
-            Rebind<Testable.INavmeshAgent> ().To<FakeNavmeshAgent> ().InScope(Scoping.GameObjectBoundaryScoper);
+            Rebind<INavmeshAgent> ().To<FakeNavmeshAgent> ().InScope(Scoping.GameObjectBoundaryScoper);
 
-            Rebind<Testable.IRigidBody> ().ToProvider<MockProvider<IRigidBody>> ().InScope(Scoping.GameObjectBoundaryScoper);
+            Rebind<IRigidBody> ().ToProvider<MockProvider<IRigidBody>> ().InScope(Scoping.GameObjectBoundaryScoper);
             Rebind<ISphereCollider> ().ToProvider<MockProvider<ISphereCollider>> ().InScope (Scoping.GameObjectBoundaryScoper);
             Rebind<IBoxCollider> ().ToProvider<MockProvider<IBoxCollider>> ().InScope (Scoping.GameObjectBoundaryScoper);
             Rebind<ILight> ().ToProvider<MockProvider<ILight>> ().InScope (Scoping.GameObjectBoundaryScoper);
 
             Rebind<IAudioSource>().To<FakeAudioSource>().InScope(Scoping.GameObjectBoundaryScoper);
-            Rebind<Testable.IUtil>().To<MockUtil>().InSingletonScope();
+            Rebind<IUtil>().To<MockUtil>().InSingletonScope();
             Rebind<IResourceLoader>().To<MockResourceLoader>().InSingletonScope();
             Rebind<TestableGameObject>().To<FakeGameObject>().InScope(Scoping.GameObjectBoundaryScoper);
             Rebind<ITransform>().To<FakeGameObject.FakeTransform>().InScope(Scoping.GameObjectBoundaryScoper);

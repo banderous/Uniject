@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Testable {
+namespace Uniject {
     public interface ILight {
         bool enabled { get; set; }
         LightType type { get; set; }

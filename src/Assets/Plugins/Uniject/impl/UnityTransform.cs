@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Testable {
+namespace Uniject.Impl {
     public class UnityTransform : ITransform {
 
         private Transform transform { get; set; }

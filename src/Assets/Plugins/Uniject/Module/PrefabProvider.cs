@@ -1,6 +1,6 @@
 using Ninject;
 using System;
-using Testable;
+using Uniject;
 
 /// <summary>
 /// Denotes a parameter should be loaded as a Resource from a specified path.

@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
-using Testable;
+using Uniject;
 
 namespace Tests {
-    public class MockUtil : Testable.IUtil {
+    public class MockUtil : IUtil {
 
         public MockUtil() {
             result = new object[0];

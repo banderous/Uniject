@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Testable {
+namespace Uniject {
 
     /// <summary>
     /// Extracted from UnityEngine.Input.

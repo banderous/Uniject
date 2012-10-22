@@ -2,7 +2,7 @@ using Moq;
 using Ninject;
 using NUnit.Framework;
 using System;
-using Testable;
+using Uniject;
 using UnityEngine;
 
 namespace Tests {

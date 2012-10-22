@@ -1,8 +1,8 @@
 using System;
-using Testable;
+using Uniject;
 
 namespace Tests {
-    public class FakeComponent : Testable.TestableComponent {
+    public class FakeComponent : TestableComponent {
         public TestableGameObject obj;
 
         public FakeComponent(TestableGameObject obj) : base(obj) {

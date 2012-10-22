@@ -4,7 +4,7 @@ using System.Linq;
 using System.Xml.Linq;
 using UnityEngine;
 
-namespace Testable {
+namespace Uniject {
     public interface IResourceLoader {
         AudioClip loadClip(string path);
         Material loadMaterial(string path);

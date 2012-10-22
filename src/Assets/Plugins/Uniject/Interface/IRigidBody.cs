@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Testable {
+namespace Uniject {
     public interface IRigidBody {
         void AddForce(UnityEngine.Vector3 force);
 

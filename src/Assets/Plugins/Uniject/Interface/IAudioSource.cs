@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Testable {
+namespace Uniject {
     public interface IAudioSource {
         void Play();
         void loopSound(AudioClip clip);

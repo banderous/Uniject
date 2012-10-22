@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Testable {
+namespace Uniject.Impl {
     public class UnityRigidBody : IRigidBody {
         private Rigidbody body;
 

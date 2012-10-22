@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Testable {
+namespace Uniject.Impl {
     public class UnityPhysicsMaterial : IPhysicMaterial {
         public UnityEngine.PhysicMaterial material { get; private set; }
         public UnityPhysicsMaterial(UnityEngine.PhysicMaterial mat) {

@@ -1,5 +1,5 @@
 using System;
-using Testable;
+using Uniject;
 
 public class Box {
     public TestableGameObject Obj { get; private set; }

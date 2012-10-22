@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Testable
+namespace Uniject.Impl
 {
-	public class UnityMath : IMaths {
+	public class UnityMath : Uniject.IMaths {
 
         private System.Random rand = new System.Random();
 

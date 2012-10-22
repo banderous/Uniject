@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Testable;
+using Uniject;
 
-namespace Testable {
+namespace Uniject {
 
     /// <summary>
     /// A testable equivalent of <c>UnityEngine.GameObject</c>.
@@ -18,7 +18,7 @@ namespace Testable {
             this.transform = transform;
         }
 
-        public void registerComponent (Testable.TestableComponent component) {
+        public void registerComponent (Uniject.TestableComponent component) {
             components.Add(component);
         }
 
@@ -53,7 +53,7 @@ namespace Testable {
             return null;
         }
 
-        public void OnCollisionEnter(Testable.Collision c) {
+        public void OnCollisionEnter(Collision c) {
             for (int t = 0; t < components.Count; t++) {
                 components[t].OnCollisionEnter(c);
             }

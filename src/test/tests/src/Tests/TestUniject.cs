@@ -1,7 +1,7 @@
 using System;
 using NUnit.Framework;
 using Ninject;
-using Testable;
+using Uniject;
 using UnityEngine;
 using System.IO;
 
@@ -13,8 +13,8 @@ namespace Tests {
     [TestFixture()]
     public class TestUniject : BaseInjectedTest {
 
-        [Testable.GameObjectBoundary]
-        public class MockComponent : Testable.TestableComponent {
+        [GameObjectBoundary]
+        public class MockComponent : TestableComponent {
             public MockComponent(TestableGameObject obj) : base(obj) {
             }
 
@@ -35,8 +35,8 @@ namespace Tests {
             }
         }
 
-        [Testable.GameObjectBoundary]
-        public class HasGameObjectBoundaryAsParameter : Testable.TestableComponent {
+        [GameObjectBoundary]
+        public class HasGameObjectBoundaryAsParameter : TestableComponent {
             public MockComponent nested { get; private set; }
             public HasGameObjectBoundaryAsParameter(TestableGameObject obj, MockComponent nested) : base(obj) {
                 this.nested = nested;
@@ -44,8 +44,8 @@ namespace Tests {
             }
         }
 
-        [Testable.GameObjectBoundary]
-        public class HasInjectedPrefab : Testable.TestableComponent {
+        [GameObjectBoundary]
+        public class HasInjectedPrefab : TestableComponent {
             public TestableGameObject nested { get; private set; }
             public HasInjectedPrefab(TestableGameObject parent, [Resource("mesh/sphere")] TestableGameObject nested) : base(parent) {
                 this.nested = nested;
@@ -175,7 +175,7 @@ namespace Tests {
         }
 
         private class HasPhysicMaterial {
-            public HasPhysicMaterial([Resource("physic/bouncy")] Testable.IPhysicMaterial mat) {
+            public HasPhysicMaterial([Resource("physic/bouncy")] IPhysicMaterial mat) {
             }
         }
 
@@ -185,7 +185,7 @@ namespace Tests {
         }
 
         private class HasNonExistentPhysicMaterial {
-            public HasNonExistentPhysicMaterial([Resource("does/not/exist")] Testable.IPhysicMaterial mat) {
+            public HasNonExistentPhysicMaterial([Resource("does/not/exist")] IPhysicMaterial mat) {
             }
         }
 
@@ -202,14 +202,14 @@ namespace Tests {
         public void testOnCollisionEnterCalled() {
             HasOnCollision has = kernel.Get<HasOnCollision>();
             Assert.IsFalse(has.onCollisionEnterCalled);
-            has.Obj.OnCollisionEnter(new Testable.Collision());
+            has.Obj.OnCollisionEnter(new Uniject.Collision());
             Assert.IsTrue(has.onCollisionEnterCalled);
         }
 
         public class HasOnCollision : TestableComponent {
             public HasOnCollision(TestableGameObject obj) : base(obj) { }
             public bool onCollisionEnterCalled { get; private set; }
-            public override void OnCollisionEnter(Testable.Collision collision) {
+            public override void OnCollisionEnter(Uniject.Collision collision) {
                 onCollisionEnterCalled = true;
             }
         }

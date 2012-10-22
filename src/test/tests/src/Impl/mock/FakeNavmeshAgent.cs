@@ -1,9 +1,10 @@
 using System;
+using Uniject;
 using UnityEngine;
 
 namespace Tests {
-    public class FakeNavmeshAgent : Testable.TestableComponent, Testable.INavmeshAgent {
-        public FakeNavmeshAgent(Testable.TestableGameObject obj) : base(obj) {
+    public class FakeNavmeshAgent : TestableComponent, INavmeshAgent {
+        public FakeNavmeshAgent(TestableGameObject obj) : base(obj) {
         }
 
         public void setDestination(UnityEngine.Vector3 dest) {

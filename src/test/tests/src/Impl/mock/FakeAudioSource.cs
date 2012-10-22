@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
-using Testable;
+using Uniject;
 
 namespace Tests {
-    public class FakeAudioSource : Testable.TestableComponent, Testable.IAudioSource {
+    public class FakeAudioSource : TestableComponent, IAudioSource {
 
         public FakeAudioSource(TestableGameObject obj) : base(obj) {
         }
@@ -20,4 +20,3 @@ namespace Tests {
         public bool isPlaying { get; set; }
     }
 }
-

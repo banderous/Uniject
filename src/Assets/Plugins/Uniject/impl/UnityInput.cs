@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Testable {
+namespace Uniject.Impl {
     public class UnityInput : IInput {
         public Vector3 mousePosition { get { return Input.mousePosition; } }
         public bool anyKey { get { return Input.anyKey; } }

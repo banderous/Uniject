@@ -1,5 +1,5 @@
 using System;
-using Testable;
+using Uniject;
 using UnityEngine;
 
 /// <summary>
@@ -8,7 +8,7 @@ using UnityEngine;
 /// using the horizontal and vertical input axes.
 /// Inputs are translated to forces applied to the sphere's rigid body.
 /// </summary>
-public class TestableInput : Testable.TestableComponent {
+public class TestableInput : TestableComponent {
     public Sphere sphere { get; private set; }
     private IInput input;
     public TestableInput(TestableGameObject obj, IInput input,

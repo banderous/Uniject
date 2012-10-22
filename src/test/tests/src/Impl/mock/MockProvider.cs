@@ -1,6 +1,6 @@
 using System;
 
-namespace Testable {
+namespace Uniject {
 
     /// <summary>
     /// Moq based mock provider.

@@ -2,8 +2,8 @@ using System;
 using UnityEngine;
 using System.Xml.Linq;
 
-namespace Testable {
-    public class UnityResourceLoader : Testable.IResourceLoader {
+namespace Uniject.Impl {
+    public class UnityResourceLoader : Uniject.IResourceLoader {
         public AudioClip loadClip(string path) {
             AudioClip result = (AudioClip)Resources.Load(path);
             if (null == result) {

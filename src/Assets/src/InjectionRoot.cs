@@ -1,6 +1,6 @@
 using Ninject;
 using System;
-using Testable;
+using Uniject;
 using UnityEngine;
 
 public class InjectionRoot : MonoBehaviour {

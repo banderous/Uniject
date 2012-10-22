@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Testable;
+using Uniject;
 using UnityEngine;
 
 namespace Tests {

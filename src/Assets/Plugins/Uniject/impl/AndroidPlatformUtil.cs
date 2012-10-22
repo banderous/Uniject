@@ -3,10 +3,8 @@ using UnityEngine;
 
 #if UNITY_ANDROID
 
-namespace Testable {
+namespace Uniject.Impl {
     public class AndroidPlatformUtil : IPlatformUtil {
-
-
         private ILogger logger;
         private AndroidJavaObject androidUtilInstance;
 

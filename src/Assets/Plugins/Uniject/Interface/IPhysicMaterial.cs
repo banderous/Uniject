@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Testable {
+namespace Uniject {
     public interface IPhysicMaterial {
         float dynamicFriction { get; set; }
         float staticFriction { get; set; }

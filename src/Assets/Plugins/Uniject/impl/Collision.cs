@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Testable {
+namespace Uniject {
     public struct Collision {
         public Vector3 relativeVelocity { get; private set; }
         public ITransform transform { get; private set; }

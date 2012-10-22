@@ -1,4 +1,5 @@
 using System;
+using Uniject.Impl;
 using UnityEngine;
 
 public class UnityGameObjectBridge : MonoBehaviour {
@@ -13,11 +14,11 @@ public class UnityGameObjectBridge : MonoBehaviour {
     public void OnCollisionEnter(Collision c) {
         UnityGameObjectBridge other = c.gameObject.GetComponent<UnityGameObjectBridge>();
         if (null != other) {
-            Testable.Collision testableCollision =
-                new Testable.Collision(c.relativeVelocity,
-                                       other.wrapping.transform,
-                                       other.wrapping,
-                                       c.contacts);
+                Uniject.Collision testableCollision =
+                new Uniject.Collision(c.relativeVelocity,
+                                      other.wrapping.transform,
+                                      other.wrapping,
+                                      c.contacts);
             wrapping.OnCollisionEnter(testableCollision);
         }
     }

@@ -1,5 +1,5 @@
 using System;
-using Testable;
+using Uniject;
 
 namespace Tests {
     public class FakeAudioListener : TestableComponent, IAudioListener {

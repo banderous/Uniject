@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Testable {
+namespace Uniject {
     public interface IUtil {
         T[] getAnyComponentsOfType<T>() where T : class;
         string loadedLevelName();

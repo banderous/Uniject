@@ -1,8 +1,9 @@
-using System;
-using Ninject.Modules;
 using Ninject.Activation;
+using Ninject.Modules;
+using System;
+using Uniject;
+using Uniject.Impl;
 using UnityEngine;
-using Testable;
 
 public class UnityModule : NinjectModule {
     
@@ -19,7 +20,7 @@ public class UnityModule : NinjectModule {
         Bind<IMaths>().To<UnityMath>().InSingletonScope();
         Bind<ITime>().To<UnityTime>().InSingletonScope();
         Bind<ILayerMask>().To<UnityLayerMask>().InSingletonScope();
-        Bind<Testable.IResourceLoader>().To<UnityResourceLoader>().InSingletonScope();
+        Bind<IResourceLoader>().To<UnityResourceLoader>().InSingletonScope();
         Bind<IInput>().To<UnityInput>().InSingletonScope();
         
         Bind<IAudioListener>().To<UnityAudioListener>();

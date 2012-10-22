@@ -1,6 +1,6 @@
 using System;
 
-namespace Testable {
+namespace Uniject {
     public class ResourceProvider<T> : Ninject.Activation.Provider<T> where T : UnityEngine.Object {
 
         private IResourceLoader loader;

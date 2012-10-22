@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Testable
+namespace Uniject
 {
 	public interface IMaths {
         bool trueOneInN(int n);

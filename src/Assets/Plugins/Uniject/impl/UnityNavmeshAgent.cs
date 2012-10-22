@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Testable {
+namespace Uniject.Impl {
     public class UnityNavmeshAgent : INavmeshAgent {
         private NavMeshAgent agent;
 		private GameObject obj;

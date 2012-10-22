@@ -1,6 +1,6 @@
 using System;
 
-namespace Testable {
+namespace Uniject {
     public interface IAudioListener {
         void noOp();
         TestableGameObject Obj { get; }

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Testable {
+namespace Uniject.Impl {
     public class UnitySphereCollider : ISphereCollider {
         private SphereCollider collider;
         private UnityPhysicsMaterial mat;

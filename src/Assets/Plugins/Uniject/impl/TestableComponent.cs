@@ -1,6 +1,6 @@
 using System;
 
-namespace Testable {
+namespace Uniject {
     public class TestableComponent {
         private TestableGameObject obj;
 

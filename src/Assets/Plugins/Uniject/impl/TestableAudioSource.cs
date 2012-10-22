@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Testable {
+namespace Uniject.Impl {
     public class TestableAudioSource {
         public IAudioSource audio { get; private set; }
         private IMaths maths;

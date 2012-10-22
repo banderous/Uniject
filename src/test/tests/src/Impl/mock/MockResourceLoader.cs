@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Testable;
+using Uniject;
 using UnityEngine;
 using System.IO;
 using System.Xml.Linq;
@@ -13,7 +13,7 @@ namespace Tests {
     /// Mock resource loader.
     /// TODO: fix the ludicrous, broken file existence checking.
     /// </summary>
-    public class MockResourceLoader : Testable.IResourceLoader {
+    public class MockResourceLoader : IResourceLoader {
 
         private string resourcesPath = Path.GetFullPath("../../../../Assets/resources");
         private IKernel kernel;

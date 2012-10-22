@@ -1,7 +1,7 @@
 using System;
 using Ninject;
 
-namespace Testable {
+namespace Uniject {
     public class Factory<T> {
 
         private IKernel kernel;

@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using Testable;
+using Uniject;
 
 /*
  * Sample testable component that has a rigid body and sphere collider,
@@ -35,7 +35,7 @@ public class TestableExample : TestableComponent {
         }
     }
 
-    public override void OnCollisionEnter(Testable.Collision c) {
+    public override void OnCollisionEnter(Uniject.Collision c) {
         source.playOneShot(beep);
     }
 }
