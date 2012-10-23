@@ -14,7 +14,7 @@ namespace Uniject {
         }
 
         protected override T CreateInstance(Ninject.Activation.IContext context) {
-            Resource resource = Scoping.getResourcePath(context);
+            Resource resource = Scoping.getContextAttribute<Resource>(context);
             if (null != resource) {
                 loader.loadResource<UnityEngine.Object>(resource.Path);
             }

@@ -4,6 +4,7 @@ using Ninject;
 using Uniject;
 using UnityEngine;
 using System.IO;
+using System.Xml.XPath;
 
 namespace Tests {
 
@@ -101,7 +102,7 @@ namespace Tests {
         [Test]
         public void testResources() {
             IResourceLoader loader = kernel.Get<IResourceLoader>();
-            Assert.AreEqual("Hello World", loader.loadDoc("xml/test").Element("element").Value);
+            Assert.AreEqual("Hello World", loader.loadDoc("xml/test").XPathSelectElement("root/string").Value);
         }
 
         [Test]

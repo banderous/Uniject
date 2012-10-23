@@ -21,13 +21,13 @@ namespace Uniject {
             return context;
         }
 
-        public static Resource getResourcePath(Ninject.Activation.IContext context) {
-            if (context.Request.Target != null && context.Request.Target.IsDefined(typeof(Resource), false)) {
-                return (Resource) context.Request.Target.GetCustomAttributes(typeof(Resource), false)[0];
+        public static T getContextAttribute<T>(Ninject.Activation.IContext context) where T : System.Attribute {
+            if (context.Request.Target != null && context.Request.Target.IsDefined(typeof(T), false)) {
+                return (T) context.Request.Target.GetCustomAttributes(typeof(T), false)[0];
             }
             
             if (context.Request.ParentContext != null) {
-                return getResourcePath(context.Request.ParentContext);
+                return getContextAttribute<T>(context.Request.ParentContext);
             }
 
             return null;

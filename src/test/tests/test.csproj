@@ -58,6 +58,7 @@
     <Compile Include="src\Tests\TestCollisions.cs" />
     <Compile Include="src\Impl\mock\MockProvider.cs" />
     <Compile Include="src\Tests\TestTestableInput.cs" />
+    <Compile Include="src\Tests\TestUnijectConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Assembly-CSharp-vs.csproj">

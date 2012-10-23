@@ -62,11 +62,14 @@
      <Compile Include="Assets\Plugins\Uniject\Interface\ITime.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\ITransform.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\IUtil.cs" />
+     <Compile Include="Assets\Plugins\Uniject\Module\GameObjectProvider.cs" />
      <Compile Include="Assets\Plugins\Uniject\Module\PrefabProvider.cs" />
      <Compile Include="Assets\Plugins\Uniject\Module\ResourceProvider.cs" />
      <Compile Include="Assets\Plugins\Uniject\Module\UnityModule.cs" />
      <Compile Include="Assets\Plugins\Uniject\Module\UnityNinjectSettings.cs" />
+     <Compile Include="Assets\Plugins\Uniject\Module\XMLConfigProvider.cs" />
      <Compile Include="Assets\Plugins\Uniject\Util\IntervalBasedCallback.cs" />
+     <Compile Include="Assets\Plugins\Uniject\Util\XMLConfigurationManager.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\AndroidPlatformUtil.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\Collision.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\Factory.cs" />

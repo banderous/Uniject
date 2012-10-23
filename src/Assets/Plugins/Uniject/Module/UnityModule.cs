@@ -3,12 +3,13 @@ using Ninject.Modules;
 using System;
 using Uniject;
 using Uniject.Impl;
+using Uniject.Configuration;
 using UnityEngine;
 
 public class UnityModule : NinjectModule {
     
     public override void Load() {
-        Bind<GameObject>().To<GameObject>().InScope(Scoping.GameObjectBoundaryScoper);
+        Bind<GameObject>().ToProvider<GameObjectProvider>().InScope(Scoping.GameObjectBoundaryScoper);
         Bind<TestableGameObject>().To<UnityGameObject>().InScope(Scoping.GameObjectBoundaryScoper);
         Bind<IAudioSource>().To <UnityAudioSource>();
         Bind<ILogger>().To<UnityLogger>();
@@ -22,6 +23,7 @@ public class UnityModule : NinjectModule {
         Bind<ILayerMask>().To<UnityLayerMask>().InSingletonScope();
         Bind<IResourceLoader>().To<UnityResourceLoader>().InSingletonScope();
         Bind<IInput>().To<UnityInput>().InSingletonScope();
+        Bind<XMLConfigManager>().ToSelf().InSingletonScope();
         
         Bind<IAudioListener>().To<UnityAudioListener>();
         Bind<ITransform>().To<UnityTransform>().InScope(Scoping.GameObjectBoundaryScoper);
@@ -32,5 +34,8 @@ public class UnityModule : NinjectModule {
         Bind<AudioClip>().ToProvider<ResourceProvider<AudioClip>>().WhenTargetHas(typeof(Resource));
         Bind<PhysicMaterial>().ToProvider<ResourceProvider<PhysicMaterial>>();
         Bind<IPhysicMaterial>().To<UnityPhysicsMaterial>();
+        Bind<string>().ToProvider<XMLConfigProvider<string>>().WhenTargetHas<XMLConfigValue>();
+        Bind<float>().ToProvider<XMLConfigProvider<float>>().WhenTargetHas<XMLConfigValue>();
+        Bind<double>().ToProvider<XMLConfigProvider<double>>().WhenTargetHas<XMLConfigValue>();
     }
 }

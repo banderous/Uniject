@@ -1,6 +1,6 @@
 using System;
 
-namespace Uniject {
+namespace Uniject.Impl {
     public class ResourceProvider<T> : Ninject.Activation.Provider<T> where T : UnityEngine.Object {
 
         private IResourceLoader loader;
@@ -9,7 +9,7 @@ namespace Uniject {
         }
 
         protected override T CreateInstance(Ninject.Activation.IContext context) {
-            Resource resource = Scoping.getResourcePath(context);
+            Resource resource = Scoping.getContextAttribute<Resource>(context);
             if (resource == null) {
                 throw new ArgumentException("Injected resources must have Resource attributes");
             }
