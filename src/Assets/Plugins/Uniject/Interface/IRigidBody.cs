@@ -4,6 +4,7 @@ using UnityEngine;
 namespace Uniject {
     public interface IRigidBody {
         void AddForce(UnityEngine.Vector3 force);
+        void AddTorque(Vector3 torque, ForceMode mode);
 
         bool enabled { get; set; }
 
@@ -32,5 +33,7 @@ namespace Uniject {
             get;
             set;
         }
+
+        bool isKinematic { get; set; }
     }
 }

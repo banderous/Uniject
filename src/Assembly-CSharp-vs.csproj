@@ -46,6 +46,7 @@
   <ItemGroup>
      <Compile Include="Assets\src\Box.cs" />
      <Compile Include="Assets\src\InjectionRoot.cs" />
+     <Compile Include="Assets\src\ScanningLaser.cs" />
      <Compile Include="Assets\src\Sphere.cs" />
      <Compile Include="Assets\src\TestableCollisions.cs" />
      <Compile Include="Assets\src\TestableExample.cs" />

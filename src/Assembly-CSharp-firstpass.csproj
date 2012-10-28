@@ -55,6 +55,7 @@
      <Compile Include="Assets\Plugins\Uniject\Interface\IMaths.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\INavmeshAgent.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\IPhysicMaterial.cs" />
+     <Compile Include="Assets\Plugins\Uniject\Interface\IPhysics.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\IPlatformUtil.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\IResourceLoader.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\IRigidBody.cs" />
@@ -91,6 +92,7 @@
      <Compile Include="Assets\Plugins\Uniject\impl\UnityLogger.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityMath.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityNavmeshAgent.cs" />
+     <Compile Include="Assets\Plugins\Uniject\impl\UnityPhysics.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityPhysicsMaterial.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityResourceLoader.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityRigidBody.cs" />

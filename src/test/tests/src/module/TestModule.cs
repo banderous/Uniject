@@ -37,6 +37,7 @@ namespace Tests {
 
             Bind<TestableGameObject>().ToProvider<PrefabProvider>().WhenTargetHas(typeof(Resource));
             Rebind<IPhysicMaterial>().ToProvider<MockProvider<IPhysicMaterial>>();
+            Rebind<IPhysics>().ToProvider<MockProvider<IPhysics>>().InSingletonScope();
             Rebind<IInput>().ToConstant(input);
         }
     }

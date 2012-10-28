@@ -1,4 +1,5 @@
 using System;
+using Moq;
 using NUnit.Framework;
 using Ninject;
 using Uniject;
@@ -214,7 +215,19 @@ namespace Tests {
                 onCollisionEnterCalled = true;
             }
         }
+
+        [Test]
+        public void testPhysicsRaycast() {
+            Mock<IPhysics> mockPhysics = Mock.Get(kernel.Get<IPhysics>());
+            mockPhysics.Setup(x => x.Raycast(It.IsAny<Vector3>(), It.IsAny<Vector3>(), It.IsAny<float>(), It.IsAny<int>())).Returns(true);
+
+            Assert.IsTrue(kernel.Get<IPhysics>().Raycast(Vector3.zero, Vector3.one, float.MaxValue, 0));
+        }
+
+        [Test]
+        public void testRaycastScene() {
+            kernel.Get<ScanningLaser>();
+            step(10);
+        }
     }
 }
-
-

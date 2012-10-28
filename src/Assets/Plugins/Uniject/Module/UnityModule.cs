@@ -24,6 +24,7 @@ public class UnityModule : NinjectModule {
         Bind<IResourceLoader>().To<UnityResourceLoader>().InSingletonScope();
         Bind<IInput>().To<UnityInput>().InSingletonScope();
         Bind<XMLConfigManager>().ToSelf().InSingletonScope();
+        Bind<IPhysics>().To<UnityPhysics>().InSingletonScope();
         
         Bind<IAudioListener>().To<UnityAudioListener>();
         Bind<ITransform>().To<UnityTransform>().InScope(Scoping.GameObjectBoundaryScoper);

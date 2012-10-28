@@ -16,6 +16,10 @@ namespace Uniject.Impl {
             this.body.AddForce(force);
         }
 
+        public void AddTorque(Vector3 torque, ForceMode mode) {
+            this.body.AddTorque(torque, mode);
+        }
+
         public float drag { 
             get { return body.drag; }
             set { body.drag = value; }
@@ -53,6 +57,11 @@ namespace Uniject.Impl {
         public bool useGravity {
             get { return body.useGravity; }
             set { body.useGravity = value; }
+        }
+
+        public bool isKinematic {
+            get { return body.isKinematic; }
+            set { body.isKinematic = value; }
         }
     }
 }
