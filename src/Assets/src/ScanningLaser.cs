@@ -1,6 +1,10 @@
 using System;
 using Uniject;
 
+/// <summary>
+/// A rotating box that casts a ray into the world,
+/// placing a sphere at the point of intersection.
+/// </summary>
 public class ScanningLaser : TestableComponent {
 
     private IPhysics physics;
