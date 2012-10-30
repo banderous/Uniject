@@ -9,7 +9,7 @@ namespace Uniject.Impl {
         public GameObject obj { get; private set; }
         public UnityGameObject (GameObject obj) : base(new UnityTransform(obj)) {
             this.obj = obj;
-            obj.AddComponent<UnityGameObjectBridge>().wrapping = this;
+            obj.AddComponent<UnityGameObjectBridge>().wrap(this);
         }
 
         public override void Destroy() {

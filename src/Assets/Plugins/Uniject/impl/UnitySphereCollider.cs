@@ -7,7 +7,10 @@ namespace Uniject.Impl {
         private UnityPhysicsMaterial mat;
 
         public UnitySphereCollider(GameObject obj) {
-            this.collider = obj.AddComponent<SphereCollider>();
+            this.collider = obj.GetComponent<SphereCollider>();
+            if (null == collider) {
+                this.collider = obj.AddComponent<SphereCollider>();
+            }
         }
 
         public float radius {

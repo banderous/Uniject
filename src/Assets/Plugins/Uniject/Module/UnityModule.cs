@@ -9,6 +9,7 @@ using UnityEngine;
 public class UnityModule : NinjectModule {
     
     public override void Load() {
+        Bind<GameObjectProvider>().ToSelf().InSingletonScope();
         Bind<GameObject>().ToProvider<GameObjectProvider>().InScope(Scoping.GameObjectBoundaryScoper);
         Bind<TestableGameObject>().To<UnityGameObject>().InScope(Scoping.GameObjectBoundaryScoper);
         Bind<IAudioSource>().To <UnityAudioSource>();

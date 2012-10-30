@@ -3,6 +3,7 @@ using Uniject.Impl;
 using UnityEngine;
 
 public class UnityGameObjectBridge : MonoBehaviour {
+
     public void OnDestroy() {
         wrapping.Destroy();
     }
@@ -23,6 +24,20 @@ public class UnityGameObjectBridge : MonoBehaviour {
         }
     }
 
-    public UnityGameObject wrapping;
+    public void Start() {
+        if (null == wrapping && wrapRef != null) {
+            wrapping = new UnityGameObject(wrapRef);
+        }
+    }
+
+    public void wrap(UnityGameObject obj) {
+        this.wrapRef = obj.obj;
+        this.wrapping = obj;
+    }
+
+    public UnityGameObject wrapping { get; private set; }
+
+    [SerializeField]
+    private GameObject wrapRef;
 }
 
