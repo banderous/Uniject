@@ -12,6 +12,7 @@ namespace Uniject.Impl {
 
         public Action<GameObject> output;
         public Func<GameObject> input;
+        public Transform root;
 
         protected override GameObject CreateInstance(Ninject.Activation.IContext context) {
             GameObject o = null;
@@ -25,6 +26,8 @@ namespace Uniject.Impl {
             if (null != output) {
                 output(o);
             }
+            o.transform.parent = root;
+
             return o;
         }
     }

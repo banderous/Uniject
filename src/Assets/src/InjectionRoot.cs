@@ -40,7 +40,10 @@ public class InjectionRoot : MonoBehaviour {
             if (null == type) {
                 return;
             }
+
+            UnityInjector.get().Get<UnityResourceLoader>().root = transform;
             GameObjectProvider provider = UnityInjector.get().Get<Uniject.Impl.GameObjectProvider>();
+            provider.root = transform;
             provider.output = (s) => objects.Add(s);
             provider.input = () => {
                 GameObject result = null;
@@ -53,6 +56,8 @@ public class InjectionRoot : MonoBehaviour {
             object o = UnityInjector.get().Get(Type.GetType(typeToInstantiate));
             provider.output = null;
             provider.input = null;
+            provider.root = null;
+            UnityInjector.get().Get<UnityResourceLoader>().root = null;
 
             if (o is TestableComponent) {
                 TestableComponent tco = o as TestableComponent;
@@ -67,8 +72,9 @@ public class InjectionRoot : MonoBehaviour {
 
     private void Destroy() {
         if (created) {
-            foreach (GameObject o in objects) {
-                GameObject.DestroyImmediate(o);
+
+            for (int t = 0; t < transform.childCount; t++) {
+                GameObject.DestroyImmediate(transform.GetChild(0).gameObject);
             }
 
             objects.Clear();

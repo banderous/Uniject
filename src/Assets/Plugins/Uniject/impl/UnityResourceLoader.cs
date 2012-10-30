@@ -22,8 +22,11 @@ namespace Uniject.Impl {
             return XDocument.Parse(textAsset.text);
         }
 
+        public Transform root;
+
         public TestableGameObject instantiate(string path) {
             GameObject obj = (GameObject) GameObject.Instantiate(Resources.Load(path));
+            obj.transform.parent = root;
             return new UnityGameObject(obj);
         }
 
