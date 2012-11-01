@@ -2,6 +2,7 @@ using System;
 using Ninject;
 using Ninject.Injection;
 using UnityEngine;
+using Uniject.Impl;
 
 public class UnityInjector
 {
@@ -10,7 +11,8 @@ public class UnityInjector
     public static IKernel get() {
         if (null == kernel) {
             kernel = new StandardKernel (new UnityNinjectSettings (), new Ninject.Modules.INinjectModule[] {
-                new UnityModule ()
+                new UnityModule (),
+                new LateBoundModule(),
             } );
             
             GameObject listener = new GameObject();

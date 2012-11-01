@@ -59,7 +59,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   debugUnloadMode: 0
-  iPhoneBundleIdentifier: com.Company.ProductName
+  iPhoneBundleIdentifier: com.ballatergames.corpus
   iPhoneBundleVersion: 1.0
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 6
@@ -73,7 +73,7 @@ PlayerSettings:
   CreateWallpaper: 0
   StripUnusedMeshComponents: 0
   iPhoneSdkVersion: 988
-  iPhoneTargetOSVersion: 4
+  iPhoneTargetOSVersion: 7
   uIPrerenderedIcon: 0
   uIRequiresPersistentWiFi: 0
   uIStatusBarHidden: 1
@@ -81,6 +81,7 @@ PlayerSettings:
   uIStatusBarStyle: 0
   iPhoneSplashScreen: {fileID: 0}
   iPhoneHighResSplashScreen: {fileID: 0}
+  iPhoneTallHighResSplashScreen: {fileID: 0}
   iPadPortraitSplashScreen: {fileID: 0}
   iPadHighResPortraitSplashScreen: {fileID: 0}
   iPadLandscapeSplashScreen: {fileID: 0}

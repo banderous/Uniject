@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 using Ninject;
+using Uniject.Impl;
 
 namespace Tests {
 
@@ -37,7 +38,7 @@ namespace Tests {
 
         protected IKernel createNewKernel() {
             mockInput = new Moq.Mock<Uniject.IInput>();
-            return new StandardKernel (new UnityModule(), new TestModule(mockInput.Object));
+            return new StandardKernel (new UnityModule(), new TestModule(mockInput.Object), new LateBoundModule());
         }
 
         protected Moq.Mock<Uniject.IInput> mockInput;

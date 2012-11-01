@@ -1,3 +1,4 @@
+using Ninject;
 using Ninject.Activation;
 using Ninject.Modules;
 using System;
@@ -35,8 +36,5 @@ public class UnityModule : NinjectModule {
         Bind<AudioClip>().ToProvider<ResourceProvider<AudioClip>>().WhenTargetHas(typeof(Resource));
         Bind<PhysicMaterial>().ToProvider<ResourceProvider<PhysicMaterial>>();
         Bind<IPhysicMaterial>().To<UnityPhysicsMaterial>();
-        Bind<string>().ToProvider<XMLConfigProvider<string>>().WhenTargetHas<XMLConfigValue>();
-        Bind<float>().ToProvider<XMLConfigProvider<float>>().WhenTargetHas<XMLConfigValue>();
-        Bind<double>().ToProvider<XMLConfigProvider<double>>().WhenTargetHas<XMLConfigValue>();
     }
 }

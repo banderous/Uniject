@@ -5,7 +5,14 @@ using UnityEngine;
 
 public class UnityNinjectSettings : INinjectSettings
 {
-	#region INinjectSettings implementation
+    T INinjectSettings.Get<T>(string key, T defaultValue) {
+        throw new NotImplementedException();
+    }
+
+    public Func<IContext, object> DefaultScopeCallback {
+        get { return x => new object (); }
+    }
+
 	public T Get<T> (string key, T defaultValue)
 	{
 		throw new NotImplementedException ();
@@ -78,6 +85,5 @@ public class UnityNinjectSettings : INinjectSettings
 		set {
 		}
 	}
-	#endregion
 }
 
