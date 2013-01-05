@@ -24,6 +24,8 @@ public class UnityModule : NinjectModule {
         Bind<ILayerMask>().To<UnityLayerMask>().InSingletonScope();
         Bind<IResourceLoader>().To<UnityResourceLoader>().InSingletonScope();
         Bind<IInput>().To<UnityInput>().InSingletonScope();
+        Bind<IScreen>().To<UnityScreen>().InSingletonScope();
+
         Bind<XMLConfigManager>().ToSelf().InSingletonScope();
         Bind<IPhysics>().To<UnityPhysics>().InSingletonScope();
         

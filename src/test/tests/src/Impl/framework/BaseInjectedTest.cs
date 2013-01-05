@@ -38,10 +38,12 @@ namespace Tests {
 
         protected IKernel createNewKernel() {
             mockInput = new Moq.Mock<Uniject.IInput>();
-            return new StandardKernel (new UnityModule(), new TestModule(mockInput.Object), new LateBoundModule());
+            mockScreen = new Moq.Mock<Uniject.IScreen>();
+            return new StandardKernel (new UnityModule(), new TestModule(mockInput.Object, mockScreen.Object), new LateBoundModule());
         }
 
         protected Moq.Mock<Uniject.IInput> mockInput;
+        protected Moq.Mock<Uniject.IScreen> mockScreen;
 
         protected MockUtil getUtilInstance() {
             return (MockUtil) kernel.Get<Uniject.IUtil>();

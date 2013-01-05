@@ -11,8 +11,11 @@ namespace Tests {
     class TestModule : Ninject.Modules.NinjectModule {
 
         private IInput input;
-        public TestModule(IInput mockInput) {
+        private IScreen screen;
+
+        public TestModule(IInput mockInput, IScreen mockScreen) {
             this.input = mockInput;
+            this.screen = mockScreen;
         }
 
         public override void Load () {
@@ -39,6 +42,7 @@ namespace Tests {
             Rebind<IPhysicMaterial>().ToProvider<MockProvider<IPhysicMaterial>>();
             Rebind<IPhysics>().ToProvider<MockProvider<IPhysics>>().InSingletonScope();
             Rebind<IInput>().ToConstant(input);
+            Rebind<IScreen>().ToConstant(screen);
         }
     }
 }
