@@ -27,6 +27,7 @@ namespace Tests {
         [Test]
         public void testMovementToRight() {
             TestableInput scene = kernel.Get<TestableInput>();
+            var mockInput = getMockedDependency<IInput>();
             mockInput.Setup(mock => mock.GetAxis("Horizontal")).Returns(1);
 
             Mock<IRigidBody> mockBody = Mock.Get(scene.sphere.body);

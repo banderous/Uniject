@@ -16,14 +16,12 @@ namespace Uniject.Impl {
 
         public override void Load() {
 
-
             // We need these explicit instance bindings for AOT to work properly.
             Bind<string>().ToMethod(new XMLConfigProvider<string> (Kernel.Get<XMLConfigManager>()).CreateInstance);
-
             Bind<float>().ToMethod(new XMLConfigProvider<float> (Kernel.Get<XMLConfigManager>()).CreateInstance);
-            
             Bind<double>().ToMethod(new XMLConfigProvider<double> (Kernel.Get<XMLConfigManager>()).CreateInstance);
-                
+
+            Bind<float>().ToMethod(x => 1).WhenTargetHas<Resource>();
         }
 
         private string provideString(IContext context) {
