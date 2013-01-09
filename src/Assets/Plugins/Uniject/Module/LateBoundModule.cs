@@ -20,8 +20,6 @@ namespace Uniject.Impl {
             Bind<string>().ToMethod(new XMLConfigProvider<string> (Kernel.Get<XMLConfigManager>()).CreateInstance);
             Bind<float>().ToMethod(new XMLConfigProvider<float> (Kernel.Get<XMLConfigManager>()).CreateInstance);
             Bind<double>().ToMethod(new XMLConfigProvider<double> (Kernel.Get<XMLConfigManager>()).CreateInstance);
-
-            Bind<float>().ToMethod(x => 1).WhenTargetHas<Resource>();
         }
 
         private string provideString(IContext context) {
