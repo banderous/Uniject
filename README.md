@@ -1,13 +1,13 @@
 Uniject
 =======
 
-Uniject, the Testability framework for Unity3D
+The <a href="http://en.wikipedia.org/wiki/Software_testability">testability</a> framework for <a href="http://www.unity3d.com">Unity3D</a>, offering:
 
 * Plain Old C Sharp, testable MonoBehaviour equivalents
-* Unit test your code outside of Unity
+* Unit/integration test your code outside of Unity in your IDE of choice
 * A robust and flexible way of creating GameObjects automatically, by inference of the code that drives them
 * Constructors!
-* An extremely flexible code base – in short, the benefits of DI + IOC.
+* An extremely flexible code base – in short, the benefits of <a href="http://en.wikipedia.org/wiki/Dependency_injection">Dependency injection</a> + <a href="http://en.wikipedia.org/wiki/Inversion_of_control">Inversion of control</a>
 
 <dl>
   <dt>Prerequisites</dt>

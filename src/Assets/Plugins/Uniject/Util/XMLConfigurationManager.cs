@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
@@ -46,7 +47,7 @@ namespace Uniject.Configuration {
             if (null == element) {
                 throw new ArgumentException("Xpath element not found:" + xpath);
             }
-            return (T)(Convert.ChangeType(element.Value, typeof(T)));
+            return (T)(Convert.ChangeType(element.Value, typeof(T), CultureInfo.InvariantCulture));
         }
     }
 }
