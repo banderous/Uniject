@@ -73,6 +73,23 @@ namespace Tests {
             public HasSingletonScreen(TestableGameObject obj, IScreen screen) : base(obj) { injectedScreen = screen; }
         }
 
+        public interface IStartUpdateCallback {
+            void OnConstructor();
+            void OnStart();
+            void OnUpdate();
+        }
+
+        [GameObjectBoundary]
+        public class HasStartUpdateCallback : TestableComponent {
+            public IStartUpdateCallback callback;
+            public HasStartUpdateCallback(TestableGameObject obj, IStartUpdateCallback callback) : base(obj) {
+                this.callback = callback;
+                this.callback.OnConstructor();
+            }
+            public override void Start() { callback.OnStart(); }
+            public override void Update() { callback.OnUpdate(); }
+        }
+
         /// <summary>
         /// Tests the testable component has its Update method called.
         /// </summary>
@@ -83,6 +100,32 @@ namespace Tests {
             Assert.AreEqual(0, component.updateCount);
             step(1);
             Assert.AreEqual(1, component.updateCount);
+        }
+
+        /// <summary>
+        /// Tests that the testable component has its constructor called
+        /// first, its Start method second, and its Update method last.
+        /// </summary>
+        [Test]
+        public void TestTestableComponentStartFiresBeforeUpdate()
+        {
+            Mock<IStartUpdateCallback> mockCallback = new Mock<IStartUpdateCallback>();
+            mockCallback.Setup(c => c.OnConstructor()).Callback(() => {
+                mockCallback.Verify(c => c.OnStart(), Times.Never());
+                mockCallback.Verify(c => c.OnUpdate(), Times.Never());
+            });
+            mockCallback.Setup(c => c.OnStart()).Callback(() => {
+                mockCallback.Verify(c => c.OnConstructor(), Times.Once());
+                mockCallback.Verify(c => c.OnUpdate(), Times.Never());
+            });
+            mockCallback.Setup(c => c.OnUpdate()).Callback(() => {
+                mockCallback.Verify(c => c.OnConstructor(), Times.Once());
+                mockCallback.Verify(c => c.OnStart(), Times.Once());
+            });
+
+            kernel.Bind<IStartUpdateCallback>().ToMethod(context => mockCallback.Object);
+            HasStartUpdateCallback component = kernel.Get<HasStartUpdateCallback>();
+            step();
         }
 
         [Test]
