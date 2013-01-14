@@ -33,6 +33,13 @@ namespace Uniject {
             }
         }
 
+        public void Start() {
+            for (int t = 0; t < components.Count; t++) {
+                TestableComponent component = components[t];
+                component.Start();
+            }
+        }
+
         public void Update() {
             if (active) {
                 for (int t = 0; t < components.Count; t++) {

@@ -12,6 +12,7 @@ namespace Tests {
 
                 foreach (TestableGameObject o in toAdd) {
                     objects.Add(o);
+                    o.Start();
                 }
                 toAdd.Clear();
 
