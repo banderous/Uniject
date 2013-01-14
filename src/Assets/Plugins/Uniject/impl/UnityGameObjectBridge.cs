@@ -3,6 +3,11 @@ using Uniject.Impl;
 using UnityEngine;
 
 public class UnityGameObjectBridge : MonoBehaviour {
+
+    public void Start() {
+        wrapping.Start();
+    }
+
     public void OnDestroy() {
         wrapping.Destroy();
     }

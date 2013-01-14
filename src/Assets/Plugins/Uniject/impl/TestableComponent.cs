@@ -5,6 +5,7 @@ namespace Uniject {
         private TestableGameObject obj;
 
         public bool enabled { get; set; }
+        private bool hadFirstUpdate = false;
 
         public TestableComponent(TestableGameObject obj) {
             this.enabled = true;
@@ -18,8 +19,15 @@ namespace Uniject {
 
         public void OnUpdate() {
             if (enabled) {
+                if (!hadFirstUpdate) {
+                    hadFirstUpdate = true;
+                    Start();
+                }
                 Update();
             }
+        }
+
+        public virtual void Start() {
         }
 
         public virtual void Update() {
