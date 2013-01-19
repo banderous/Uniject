@@ -55,6 +55,24 @@ namespace Tests {
             }
         }
 
+        [GameObjectBoundary]
+        public class HasSingletonTime : TestableComponent {
+            public ITime injectedTime { get; private set; }
+            public HasSingletonTime(TestableGameObject obj, ITime time) : base(obj) { injectedTime = time; }
+        }
+
+        [GameObjectBoundary]
+        public class HasSingletonInput : TestableComponent {
+            public IInput injectedInput { get; private set; }
+            public HasSingletonInput(TestableGameObject obj, IInput input) : base(obj) { injectedInput = input; }
+        }
+
+        [GameObjectBoundary]
+        public class HasSingletonScreen : TestableComponent {
+            public IScreen injectedScreen { get; private set; }
+            public HasSingletonScreen(TestableGameObject obj, IScreen screen) : base(obj) { injectedScreen = screen; }
+        }
+
         /// <summary>
         /// Tests the testable component has its Update method called.
         /// </summary>
@@ -135,6 +153,39 @@ namespace Tests {
         public void testHasInjectedObjects() {
             HasInjectedGameObjects injected = kernel.Get<HasInjectedGameObjects>();
             Assert.AreNotEqual(injected.a, injected.b);
+        }
+
+        /// <summary>
+        /// Unity <c>Time</c> singleton class is injected
+        /// </summary>
+        [Test]
+        public void testHasInjectedSingletonTime() {
+            HasSingletonTime injected = kernel.Get<HasSingletonTime>();
+            Assert.IsNotNull(injected.injectedTime);
+            ITime time = kernel.Get<ITime>();
+            Assert.AreEqual(time, injected.injectedTime);
+        }
+
+        /// <summary>
+        /// Unity <c>Input</c> singleton class is injected
+        /// </summary>
+        [Test]
+        public void testHasInjectedSingletonInput() {
+            HasSingletonInput injected = kernel.Get<HasSingletonInput>();
+            Assert.IsNotNull(injected.injectedInput);
+            IInput input = kernel.Get<IInput>();
+            Assert.AreEqual(input, injected.injectedInput);
+        }
+
+        /// <summary>
+        /// Unity <c>Screen</c> singleton class is injected
+        /// </summary>
+        [Test]
+        public void testHasInjectedSingletonScreen() {
+            HasSingletonScreen injected = kernel.Get<HasSingletonScreen>();
+            Assert.IsNotNull(injected.injectedScreen);
+            IScreen screen = kernel.Get<IScreen>();
+            Assert.AreEqual(screen, injected.injectedScreen);
         }
 
         private class HasAttributedAudioClip {
